@@ -17,6 +17,9 @@ const nextConfig = {
       layoutRaw: true,
     },
   },
+  images: {
+    domains: ["assets.v-thomas.me"],
+  },
 };
 
 module.exports = nextConfig;

@@ -8,6 +8,7 @@ import {
   Text,
   Title,
 } from "@v-thomas/core-ui";
+import Image from "next/image";
 
 export const AppsModal = ({
   isOpen,
@@ -21,7 +22,12 @@ export const AppsModal = ({
       <Row gap="auto">
         <Title>Applications</Title>
         <Button noStyle onClick={toggleOff}>
-          x
+          <Image
+            width="30"
+            height="30"
+            src="https://assets.v-thomas.me/x-mark.svg"
+            alt="Close button"
+          />
         </Button>
       </Row>
       <Text>Here are some of the apps that i have made/created</Text>

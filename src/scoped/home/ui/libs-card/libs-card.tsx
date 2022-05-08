@@ -1,9 +1,9 @@
 import { Card, Col, Text, Title } from "@v-thomas/core-ui";
 import { Variants } from "framer-motion";
 import { useState } from "react";
-import { AppsModal } from "./apps-modal";
+import { LibsModal } from "./libs-modal";
 
-export const AppsCard = ({ delay }: { delay: number }) => {
+export const LibsCard = ({ delay }: { delay: number }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const variant: Variants = {
@@ -16,7 +16,7 @@ export const AppsCard = ({ delay }: { delay: number }) => {
       y: 0,
       transition: {
         duration: 0.5,
-        delay: delay,
+        delay: delay || 0,
         ease: "backIn",
       },
     },
@@ -30,18 +30,13 @@ export const AppsCard = ({ delay }: { delay: number }) => {
       initial="hidden"
     >
       <Col gap="0.25">
-        <Title>Apps</Title>
+        <Title>Libraries</Title>
         <Text restrictWidth>
-          I have made web-applications with different variations of use cases,
-          including movies. I have more to do here.
+          I have contributed to the npm ecosystem with multiple packages that
+          makes general tasks with js/ts much easier and less complicated
         </Text>
       </Col>
-      <AppsModal
-        isOpen={isOpen}
-        toggleOff={() => {
-          setIsOpen((val) => !val);
-        }}
-      />
+      <LibsModal isOpen={isOpen} toggleOff={() => setIsOpen((val) => !val)} />
     </Card>
   );
 };
