@@ -16,6 +16,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={DarkTheme}>
       <Core>
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
         <Component {...pageProps} />
       </Core>
     </ThemeProvider>

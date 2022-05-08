@@ -3,17 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "serve": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@v-thomas/core-ui": "^0.0.5",
     "@v-thomas/hooks": "^0.0.1",
+    "animated-scroll-to": "^2.2.0",
     "critters": "^0.0.16",
+    "emoji-cz": "^0.3.1",
     "framer-motion": "^6.3.3",
     "next": "12.1.6",
+    "next-seo": "^5.4.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-router-dom": "^6.3.0",
@@ -26,6 +31,7 @@
     "@types/styled-components": "^5.1.25",
     "eslint": "8.14.0",
     "eslint-config-next": "12.1.6",
+    "husky": "^7.0.4",
     "react-is": "^18.1.0",
     "typescript": "4.6.4"
   }
