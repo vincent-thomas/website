@@ -6,7 +6,7 @@ export const DarkTheme = {
     third: "rgb(140,140,140)",
   },
   color: {
-    primary: "rgb(144, 170, 249)",
+    primary: "rgb(170, 180, 255)",
     primaryHover: "rgb(144, 140, 270)",
 
     secondary: "rgb(144, 170, 249)",

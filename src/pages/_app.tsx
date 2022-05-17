@@ -1,10 +1,11 @@
 import type { AppProps } from "next/app";
-import "../globals.css";
+import "@styles/globals.css";
 import styled, { ThemeProvider } from "styled-components";
 import { DarkTheme } from "../theme";
+import { Banner } from "core/ui";
 
 const Core = styled.div`
-  background-color: ${({ theme }) => theme.background.primary};
+  background-color: var(--clr-background-primary);
   max-width: 100vw;
 
   min-height: 100vh;
@@ -15,12 +16,12 @@ const Core = styled.div`
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={DarkTheme}>
+      <Banner link={"//pureforms.net"}>
+        Checkout PureForms, a developer-friendly alternative to Typeform! Sign
+        up for the waitlist today!
+      </Banner>
+
       <Core>
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet"
-        />
-        <link href="https://assets.v-thomas.me/globals.css" rel="stylesheet" />
         <Component {...pageProps} />
       </Core>
     </ThemeProvider>

@@ -8,31 +8,48 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@v-thomas/core-ui": "^0.0.5",
     "@v-thomas/hooks": "^0.0.1",
     "animated-scroll-to": "^2.2.0",
     "critters": "^0.0.16",
-    "emoji-cz": "^0.3.1",
     "framer-motion": "^6.3.3",
     "next": "12.1.6",
     "next-seo": "^5.4.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-router-dom": "^6.3.0",
+    "react-scroll-motion": "^0.2.6",
+    "react-toastify": "^9.0.1",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.12",
+    "@storybook/addon-actions": "^6.4.22",
+    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-interactions": "^6.4.22",
+    "@storybook/addon-links": "^6.4.22",
+    "@storybook/builder-webpack5": "^6.4.22",
+    "@storybook/manager-webpack5": "^6.4.22",
+    "@storybook/react": "^6.4.22",
+    "@storybook/testing-library": "^0.0.11",
     "@types/node": "17.0.31",
     "@types/react": "18.0.8",
     "@types/react-dom": "18.0.3",
     "@types/styled-components": "^5.1.25",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
     "eslint": "8.14.0",
     "eslint-config-next": "12.1.6",
     "husky": "^7.0.4",
     "react-is": "^18.1.0",
-    "typescript": "4.6.4"
+    "sass": "^1.51.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "typescript": "4.6.4",
+    "webpack": "^5.72.1"
   }
 }

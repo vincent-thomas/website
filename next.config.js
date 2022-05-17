@@ -20,6 +20,9 @@ const nextConfig = {
   images: {
     domains: ["assets.v-thomas.me"],
   },
+  trailingSlash: false,
+  basePath: "",
+  useFileSystemPublicRoutes: true,
 };
 
 module.exports = nextConfig;
