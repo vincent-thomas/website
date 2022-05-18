@@ -1,8 +1,9 @@
 import { TextNormal } from "@core/components/text/normal";
 import { TitleNormal } from "@core/components/title/normal";
 import Image from "next/image";
-import { Punctuation } from "scoped/home/components/punctuation/punctuation";
+import { Punctuation } from "@core/ui/punctuation";
 import S from "./experience.module.scss";
+import { ButtonPrimary, ButtonSecondary } from "@core/components";
 
 export const Experience = () => {
   return (
@@ -40,9 +41,13 @@ export const Experience = () => {
               loosely typed, so i don&apos;t use it that much, instead
               typescript is my go to language
             </TextNormal>
+            <div className={S["button-container"]}>
+              <ButtonPrimary>Typescript</ButtonPrimary>
+              <ButtonSecondary>Javascript</ButtonSecondary>
+            </div>
           </div>
         </div>
-        <div className={S["card-container"]}>
+        <div className={`${S["card-container"]} ${S["invert"]}`}>
           <div className={S["desc"]}>
             <TitleNormal>React / Angular</TitleNormal>
             <TextNormal restrictWidth>
@@ -51,6 +56,10 @@ export const Experience = () => {
               than i&apos;ve ever seen. I&apos;ve used both in my projects. Both
               has its strengths and weaknesses.
             </TextNormal>
+            <div className={S["button-container"]}>
+              <ButtonPrimary>React</ButtonPrimary>
+              <ButtonSecondary>Angular</ButtonSecondary>
+            </div>
           </div>
           <div className={S["images-container"]}>
             <div
@@ -86,9 +95,11 @@ export const Experience = () => {
               it for building projects and had a great time using it. Although
               the project is kind of stale right now.
             </TextNormal>
+            <div className={S["button-container"]}>
+              <ButtonSecondary>Nestjs</ButtonSecondary>
+            </div>
           </div>
         </div>
-        <TitleNormal>To be continued...</TitleNormal>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import { TitleNormal } from "@core/components/title/normal";
-import { Punctuation } from "scoped/home/components/punctuation/punctuation";
+import { Punctuation } from "@core/ui/punctuation/punctuation";
 import S from "./more-info.module.scss";
 
 export const MoreInfo = () => {

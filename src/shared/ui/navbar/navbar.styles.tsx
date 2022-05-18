@@ -1,4 +1,4 @@
-import { ButtonContainer, Row } from "@v-thomas/core-ui";
+import { Row } from "@v-thomas/core-ui";
 import styled from "styled-components";
 
 export const NavbarContainer = styled(Row)`

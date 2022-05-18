@@ -3,6 +3,13 @@ const nextConfig = {
   reactStrictMode: true,
   compiler: {
     styledComponents: true,
+
+    removeConsole: {
+      exclude: ["error", "warn", "log"],
+    },
+  },
+  publicRuntimeConfig: {
+    staticFolder: "/static",
   },
   cleanDistDir: true,
   compress: true,
@@ -21,6 +28,11 @@ const nextConfig = {
     domains: ["assets.v-thomas.me"],
   },
   trailingSlash: false,
+  productionBrowserSourceMaps: true,
+  compress: true,
+  typescript: {
+    tsconfigPath: "./tsconfig.json",
+  },
   basePath: "",
   useFileSystemPublicRoutes: true,
 };

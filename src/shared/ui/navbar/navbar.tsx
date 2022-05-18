@@ -20,10 +20,8 @@ const BetterLink = styled(Link)`
 export const SharedNavbar = () => {
   return (
     <NavbarContainer gap='auto'>
-      {/* <Center gap="1"> */}
       <Avatar avatar='/icon.png'></Avatar>
       <Title size='1.7'>Vincent Thomas</Title>
-      {/* </Center> */}
       <ButtonContainer style={{ gap: "2rem !important" }}>
         <BetterLink external to='mailto:vincent.nathan.thomas@gmail.com'>
           Get in touch

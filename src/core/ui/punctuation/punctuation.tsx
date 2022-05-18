@@ -1,7 +1,7 @@
 import { Row, Title } from "@v-thomas/core-ui";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import SVGDot from "../../../../assets/dot.svg";
+import SVGDot from "assets/dot.svg";
 const Dot = () => <Image src={SVGDot} width='15' height='15' alt='' />;
 
 export const Punctuation = ({ text }: { text: string }) => {

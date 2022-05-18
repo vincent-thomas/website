@@ -8,10 +8,20 @@
     max-width: var(--bp-max-width);
     margin: 0 auto;
     .border {
-      margin-inline: 2rem;
+      margin-inline: 1rem;
       margin-top: 20px;
-      margin-bottom: 20px;
-      border-top: 1px solid gray;
+      border-top: 3px solid rgba(60, 60, 74, 0.2);
+      border-radius: 1.5rem;
+    }
+
+    .content {
+      padding-block: 1rem;
+      display: flex;
+      justify-content: space-between;
+      & > * {
+        display: flex;
+        gap: 2rem;
+      }
     }
   }
 }

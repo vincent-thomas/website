@@ -1,9 +1,30 @@
+@keyframes ani {
+  0% {
+    background-color: transparent;
+    color: var(--clr-accent-primary);
+    border: 3px solid var(--clr-accent-primary);
+
+    transition: all var(--ani-time) ease-in;
+  }
+
+  100% {
+    border: 3px solid transparent;
+    outline: none;
+    transition: all var(--ani-time) ease-in;
+    font-weight: 500;
+    font-size: 1.1rem;
+    background-color: var(--clr-accent-primary);
+    border-radius: var(--border-radius);
+  }
+}
+
 .base {
   padding: 1rem 1.5rem;
   border: 3px solid transparent;
   outline: none;
 
   transition: all var(--ani-time) ease-in;
+  animation: ani var(--ani-time) 0.5s ease backwards;
 
   font-weight: 500;
   font-size: 1.1rem;

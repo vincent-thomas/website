@@ -1,5 +1,5 @@
 .wrapper {
-  padding-block: calc(var(--sc-space) / 1.5);
+  padding-top: calc(var(--sc-space) / 1.5);
   padding-inline: var(--sc-space);
   background-color: var(--clr-background-secondary);
 
@@ -15,4 +15,9 @@
 .card-container {
   display: flex;
   gap: 1rem;
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
