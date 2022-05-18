@@ -1,0 +1,17 @@
+.wrapper {
+  width: 100%;
+  background-color: var(--clr-background-secondary);
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--bp-max-width);
+    margin: 0 auto;
+    .border {
+      margin-inline: 2rem;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border-top: 1px solid gray;
+    }
+  }
+}

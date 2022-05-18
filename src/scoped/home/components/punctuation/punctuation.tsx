@@ -2,13 +2,17 @@ import { Row, Title } from "@v-thomas/core-ui";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import SVGDot from "../../../../assets/dot.svg";
-const Dot = () => <Image src={SVGDot} width="15" height="15" alt="" />;
+const Dot = () => <Image src={SVGDot} width='15' height='15' alt='' />;
 
 export const Punctuation = ({ text }: { text: string }) => {
   return (
     <Row
-      gap="1"
-      style={{ alignItems: "center", marginBottom: "1rem" }}
+      style={{
+        alignItems: "center",
+        marginBottom: "1rem",
+        gap: "1rem",
+        justifyContent: "flex-start",
+      }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.25 }}

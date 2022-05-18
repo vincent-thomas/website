@@ -27,18 +27,19 @@ export const LibsCard = () => {
       <Card
         variants={variant}
         onClick={() => setIsOpen(true)}
-        animate="show"
-        initial="hidden"
+        animate='show'
+        initial='hidden'
       >
-        <Col gap="0.25">
-          <Title>Libraries</Title>
-          <Text>
-            I have contributed to the npm ecosystem with multiple packages that
-            makes general tasks with js/ts much easier and less complicated
-          </Text>
-        </Col>
+        {/* <Col gap="0.25"> */}
+        <Title>Libraries</Title>
+        <Text>
+          I have contributed to the npm ecosystem with multiple packages that
+          makes general tasks with js/ts much easier and less complicated
+        </Text>
+        {/* </Col> */}
       </Card>
-      <LibsModal isOpen={isOpen} toggleOff={() => setIsOpen((val) => !val)} />
+      <LibsModal isOpen={isOpen} toggleOff={() => setIsOpen(val => !val)} />
+
     </>
   );
 };

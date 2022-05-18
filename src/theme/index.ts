@@ -19,6 +19,7 @@ export const DarkTheme = {
   background: {
     primary: "rgb(30, 30, 37)",
     secondary: "rgba(60, 60, 74, 0.2)",
+    accent: "rgba(60, 60, 74, 0.2)",
     third: "rgba(90, 90, 90, 0.3)",
     modal: "rgba(0, 0, 0, 0.7)",
   },

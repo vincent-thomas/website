@@ -1,0 +1,28 @@
+.left-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-block: auto;
+}
+.title {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  &-small {
+    font-weight: 500;
+    color: var(--clr-text-primary);
+  }
+}
+
+.button {
+  &-wrapper {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &-container {
+    display: flex;
+    gap: 1rem;
+  }
+}

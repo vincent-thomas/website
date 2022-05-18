@@ -19,17 +19,17 @@ const BetterLink = styled(Link)`
 
 export const SharedNavbar = () => {
   return (
-    <NavbarContainer gap="auto">
-      <Center gap="1">
-        <Avatar avatar="/icon.png"></Avatar>
-        <Title size="1.7">Vincent Thomas</Title>
-      </Center>
+    <NavbarContainer gap='auto'>
+      {/* <Center gap="1"> */}
+      <Avatar avatar='/icon.png'></Avatar>
+      <Title size='1.7'>Vincent Thomas</Title>
+      {/* </Center> */}
       <ButtonContainer style={{ gap: "2rem !important" }}>
-        <BetterLink external to="mailto:vincent.nathan.thomas@gmail.com">
+        <BetterLink external to='mailto:vincent.nathan.thomas@gmail.com'>
           Get in touch
         </BetterLink>
-        <Button variant="outlined">About</Button>
-        <Button variant="contained">hello</Button>
+        <Button variant='outlined'>About</Button>
+        <Button variant='contained'>hello</Button>
       </ButtonContainer>
     </NavbarContainer>
   );

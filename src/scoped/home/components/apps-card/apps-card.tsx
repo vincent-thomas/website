@@ -26,17 +26,17 @@ export const AppsCard = () => {
     <>
       <Card
         variants={variant}
-        animate="show"
-        initial="hidden"
+        animate='show'
+        initial='hidden'
         onClick={() => setIsOpen(true)}
       >
-        <Col gap="0.25">
-          <Title>Apps</Title>
-          <Text>
-            I have made web-applications with different variations of use cases,
-            including movies. I have more to do here.
-          </Text>
-        </Col>
+        {/* <Col gap="0.25"> */}
+        <Title>Apps</Title>
+        <Text>
+          I have made web-applications with different variations of use cases,
+          including movies. I have more to do here.
+        </Text>
+        {/* </Col> */}
       </Card>
       <AppsModal isOpen={isOpen} toggleOff={() => setIsOpen(false)} />
     </>

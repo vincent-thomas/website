@@ -1,0 +1,115 @@
+@keyframes bounce-ts {
+  0% {
+    transform: translateY(0) rotate(-15deg);
+  }
+  50% {
+    transform: translateY(20px) rotate(-12.5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-15deg);
+  }
+}
+
+@keyframes bounce-js {
+  0% {
+    transform: translateY(0) rotate(15deg);
+  }
+  50% {
+    transform: translateY(20px) rotate(12.5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(15deg);
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-background-secondary);
+  padding-block: calc(var(--sc-space) / 1.5);
+
+  .container {
+    max-width: var(--bp-max-width);
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    gap: calc(var(--sc-space) * 2);
+    flex-direction: column;
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+    overflow: visible;
+    position: relative;
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      & .button-wrapper {
+        margin: 0 auto;
+      }
+    }
+    margin-top: 5rem;
+  }
+}
+
+.image {
+  flex: auto;
+}
+
+.js-image {
+  border-radius: 1rem;
+
+  &-wrapper {
+    transform: rotate(10deg);
+    overflow: visible;
+    animation: bounce-js 4s ease-in-out infinite;
+  }
+}
+
+.ts-image {
+  border-radius: 1rem;
+
+  &-wrapper {
+    position: absolute;
+    top: -5rem;
+    left: -0.5rem;
+    animation: bounce-ts 4s ease-in-out infinite;
+    z-index: 5;
+    transform: rotate(-10deg);
+    overflow: visible;
+  }
+}
+
+.desc {
+  max-width: 50%;
+  margin-top: 1rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes turn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.react-image {
+  animation: turn 20s linear infinite;
+  z-index: 9;
+}
+
+.images-container {
+  position: relative;
+}
+
+.react-angular-container {
+  display: flex;
+  gap: 1rem;
+}

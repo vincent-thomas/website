@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const ImageContainer = styled.div`
-  width: 370px !important;
+  width: 350px !important;
   max-width: 100%;
-  max-height: 370px;
+  max-height: 350px;
   position: relative;
 `;
 
@@ -38,8 +38,8 @@ export const ProfileImage = () => {
   return (
     <ImageContainer>
       <ProfileImageSC
-        src="/face.png"
-        alt=""
+        src='/face.png'
+        alt=''
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, borderRadius: "15%" }}
         transition={{ delay: 0.25 }}
@@ -51,8 +51,8 @@ export const ProfileImage = () => {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <Arrow
-          src="/image_arrow.svg"
-          alt=""
+          src='/image_arrow.svg'
+          alt=''
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         />

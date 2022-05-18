@@ -25,21 +25,21 @@ export const OtherCard = () => {
       <Card
         variants={variant}
         onClick={() => setIsOpen(true)}
-        animate="show"
-        initial="hidden"
+        animate='show'
+        initial='hidden'
       >
-        <Col gap="0.25">
-          <Title>Other tools</Title>
-          <Text>
-            Other projects that I have made/contributed to. I also seek new
-            projects I can contribute to. If you&apos;ve seen one email me{" "}
-            <Link external to="mailto:vincent.nathan.thomas@gmail.com">
-              here
-            </Link>
-          </Text>
-        </Col>
+        {/* <Col gap="0.25"> */}
+        <Title>Other tools</Title>
+        <Text>
+          Other projects that I have made/contributed to. I also seek new
+          projects I can contribute to. If you&apos;ve seen one email me{" "}
+          <Link external to='mailto:vincent.nathan.thomas@gmail.com'>
+            here
+          </Link>
+        </Text>
+        {/* </Col> */}
       </Card>
-      <LibsModal isOpen={isOpen} toggleOff={() => setIsOpen((val) => !val)} />
+      <LibsModal isOpen={isOpen} toggleOff={() => setIsOpen(val => !val)} />
     </>
   );
 };
