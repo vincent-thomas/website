@@ -9,6 +9,6 @@ export const HoverBackground = styled(motion.div)`
   &:hover {
     transition: background-color 0.2s ease-in-out;
 
-    background-color: var(--clr-background-third);
+    background-color: var(--clr-background-accent);
   }
 `;

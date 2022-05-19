@@ -81,11 +81,18 @@
     position: absolute;
     top: -5rem;
     left: -0.5rem;
+    transition: all 1s ease;
     animation: bounce-ts 4s ease-in-out infinite;
+
     z-index: 5;
     transform: rotate(-10deg);
     overflow: visible;
   }
+}
+
+.js-ts-image:hover .ts-image-wrapper,
+.js-ts-image:hover .js-image-wrapper {
+  animation-play-state: paused;
 }
 
 .desc {
@@ -114,6 +121,10 @@
 .react-image {
   animation: turn 20s linear infinite;
   z-index: 9;
+
+  &:hover {
+    animation-play-state: paused;
+  }
 }
 
 .images-container {

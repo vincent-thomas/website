@@ -12,7 +12,7 @@ export const Experience = () => {
         <Punctuation text='Experience' />
 
         <div className={S["card-container"]}>
-          <div className={S["images-container"]}>
+          <div className={`${S["images-container"]} ${S["js-ts-image"]}`}>
             <div className={S["js-image-wrapper"]}>
               <Image
                 src={"/js_logo.svg"}
