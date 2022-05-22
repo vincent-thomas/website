@@ -1,0 +1,31 @@
+@keyframes ani {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: calc(100% + 0.5rem);
+  }
+}
+
+.title-underline {
+  position: absolute;
+  left: -0.25rem;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.3rem;
+  background-color: var(--clr-accent);
+  padding: 0.1rem;
+  animation: ani 0.5s ease 0.75s both;
+
+  z-index: -99999;
+  transition: height 0.2s, border-radius 0.2s 0.2s;
+}
+
+.container-underline {
+  z-index: 9;
+  transition: color 0.25s ease-in;
+  position: relative;
+}

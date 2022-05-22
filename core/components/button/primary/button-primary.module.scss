@@ -1,0 +1,40 @@
+@keyframes ani {
+  0% {
+    background-color: rgba(0, 0, 0, 0.09);
+
+    color: black;
+    border: 1px solid black;
+
+    transition: all var(--ani-time) linear;
+  }
+
+  100% {
+    outline: none;
+    transition: all var(--ani-time) linear;
+    font-weight: 500;
+    font-size: 1.1rem;
+    background-color: var(--clr-accent);
+    border-radius: var(--border-radius);
+  }
+}
+
+.base {
+  padding: 1rem 1.5rem;
+  border: 1px solid black;
+  outline: none;
+
+  transition: all var(--ani-time) linear;
+  animation: ani var(--ani-time) 0.75s linear backwards;
+
+  font-weight: 500;
+  font-size: 1.1rem;
+
+  // cursor: pointer;
+  background-color: var(--clr-accent);
+  border-radius: var(--border-radius);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.09);
+    transition: all var(--ani-time) linear;
+  }
+}

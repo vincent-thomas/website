@@ -1,0 +1,22 @@
+.base {
+  padding: 1rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border: 1px solid black;
+  border-radius: var(--border-radius);
+
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+
+  transition: all var(--ani-time) ease-in;
+  outline: none;
+
+  &:hover {
+    border: 1px solid transparent;
+    transition: all var(--ani-time) ease-in;
+    color: black;
+
+    background-color: var(--clr-accent);
+  }
+}

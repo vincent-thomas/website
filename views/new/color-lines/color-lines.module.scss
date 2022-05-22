@@ -1,0 +1,108 @@
+$move: -10rem;
+
+$width: 9000px;
+
+.wrapper {
+  background-color: var(--clr-light-background);
+
+  .container {
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &.flip {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .top,
+  .middle,
+  .bottom {
+    height: 125px;
+    width: 100%;
+  }
+
+  .top {
+    background-color: var(--clr-accent);
+  }
+  .middle {
+    background-color: #1e1e25;
+  }
+  .bottom {
+    background-color: #1b1b21;
+  }
+
+  // @media screen and (min-width: 1000px) {
+  //   .container {
+  //     transform: rotate(-25deg);
+  //   }
+
+  //   .top {
+  //     width: $width;
+  //     transform: translateX($move);
+  //     z-index: -1;
+  //   }
+  //   .middle {
+  //     width: $width;
+  //     z-index: -1;
+  //     transform: translateX($move) translateY(-1px);
+  //   }
+  //   .bottom {
+  //     width: $width;
+
+  //     z-index: -1;
+  //     top: 100%;
+  //     position: absolute;
+  //     transform: translateX($move) translateY(-2px);
+  //   }
+
+  // .cover {
+  //   position: absolute;
+  //   bottom: 0;
+  //   width: 60vw;
+  //   transform: translateX(-313px) translateY(-25px) rotate(25deg);
+  //   z-index: -999999999999999999;
+  //   height: 400px;
+
+  //   background-color: var(--clr-light-background);
+  // }
+  // }
+  // &.from-right .top {
+  //   transform: rotate(-27.5deg) translateY(-225px);
+  // }
+  // &.from-right .middle {
+  //   transform: rotate(-27.5deg) translateY(-101px);
+  // }
+  // &.from-right .bottom {
+  //   transform: rotate(-27.5deg) translateY(-238px);
+  // }
+
+  // // &.from-left .top,
+  // // &.from-left .middle,
+  // // &.from-left .bottom {
+  // //   transform: rotate(27.5deg) translateY(-225px);
+  // // }
+
+  // .top {
+  //   width: 150%;
+  //   height: 125px;
+  //   left: -10rem;
+  //   background-color: var(--clr-accent);
+  //   position: absolute;
+  // }
+  // .middle {
+  //   width: 150%;
+  //   height: 125px;
+  //   left: -10rem;
+  //   background-color: #1e1e25;
+  //   position: absolute;
+  // }
+  // .bottom {
+  //   width: 250%;
+  //   height: 800px;
+  //   left: -50rem;
+  //   background-color: #1b1b21;
+  //   position: absolute;
+  // }
+}

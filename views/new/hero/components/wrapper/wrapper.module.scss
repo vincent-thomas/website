@@ -1,0 +1,11 @@
+.wrapper {
+  background-color: var(--clr-light-background);
+  z-index: 1;
+}
+
+.content {
+  max-width: var(--bp-max-width);
+  margin: 0 auto;
+  padding-inline: var(--sc-space);
+  padding-block: 5rem;
+}
