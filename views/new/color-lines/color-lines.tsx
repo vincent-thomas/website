@@ -7,8 +7,7 @@ export const ColorLines: FC<{ flip?: boolean }> = ({ flip = false }) => {
       <div className={`${S["container"]} ${flip && S["flip"]}`}>
         <div className={S["cover"]}></div>
         <div className={S["top"]} />
-        <div className={S["middle"]} />
-        {/* <div className={S["bottom"]} /> */}
+        <div className={S["bottom"]} />
       </div>
     </div>
   );

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { HoverBackground } from "core/ui/hover-background/hover-background";
 import { FC } from "react";
 import { ButtonNotStyled } from "@/core/components/button/not-styled";
@@ -17,9 +16,9 @@ export const SocialTwitterIcon: FC<{ type: "white" | "black" }> = ({
         style={{ display: "grid", placeItems: "center" }}
       >
         {type === "white" ? (
-          <Image src='/twitter_logo.svg' alt='' width='30' height='30' />
+          <img src='/twitter_logo.svg' alt='' width='30' height='30' />
         ) : (
-          <Image src='/twitter-black_logo.svg' alt='' width='30' height='30' />
+          <img src='/twitter-black_logo.svg' alt='' width='30' height='30' />
         )}
       </HoverBackground>
     </ButtonNotStyled>

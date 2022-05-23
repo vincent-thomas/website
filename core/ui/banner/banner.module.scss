@@ -1,5 +1,8 @@
+@import "styles/_constants";
+@import "styles/_colors";
+
 .container {
-  background-color: var(--clr-accent-primary);
+  background-color: $clr-accent;
   width: 100%;
   padding: 0.5rem 1rem;
   padding-top: 0.6rem;
@@ -7,7 +10,7 @@
 }
 
 .content {
-  max-width: var(--bp-max-width);
+  max-width: $max-width;
   padding-inline: var(--sc-space);
   width: 100%;
   margin: 0 auto;

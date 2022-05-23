@@ -1,7 +1,6 @@
-import Image from "next/image";
 import { HoverBackground } from "core/ui/hover-background/hover-background";
 import { FC } from "react";
-import { ButtonNotStyled } from "@/core/components/button/not-styled";
+import { ButtonNotStyled } from "core/components/button/not-styled";
 
 export const SocialGithubIcon: FC<{ type: "white" | "black" }> = ({ type }) => {
   return (
@@ -13,9 +12,9 @@ export const SocialGithubIcon: FC<{ type: "white" | "black" }> = ({ type }) => {
         style={{ display: "grid", placeItems: "center" }}
       >
         {type === "black" ? (
-          <Image src='/github-black_logo.png' alt='' width='30' height='30' />
+          <img src='/github-black_logo.png' alt='' width='30' height='30' />
         ) : (
-          <Image src='/github-logo.svg' alt='' width='30' height='30' />
+          <img src='/github-logo.svg' alt='' width='30' height='30' />
         )}
       </HoverBackground>
     </ButtonNotStyled>

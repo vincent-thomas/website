@@ -1,0 +1,1 @@
+next export -o dist/static

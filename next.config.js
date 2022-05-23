@@ -7,36 +7,30 @@ const nextConfig = {
     styledComponents: true,
 
     removeConsole: {
-      exclude: ["error", "warn", "log"],
-    },
+      exclude: ["error", "warn", "log", "*"]
+    }
   },
   publicRuntimeConfig: {
-    staticFolder: "/static",
+    staticFolder: "/static"
   },
   cleanDistDir: true,
   compress: true,
-  distDir: "dist",
+  distDir: "dist/server",
   swcMinify: true,
   poweredByHeader: false,
+  exportPathMap: false,
   optimizeFonts: true,
-  experimental: {
-    optimizeCss: true,
-    runtime: "edge",
-    images: {
-      layoutRaw: true,
-    },
-  },
+
   images: {
-    domains: ["assets.v-thomas.me"],
+    domains: ["assets.v-thomas.me"]
   },
   trailingSlash: false,
   productionBrowserSourceMaps: true,
-  compress: true,
   typescript: {
-    tsconfigPath: "./tsconfig.json",
+    tsconfigPath: "./tsconfig.json"
   },
   basePath: "",
-  useFileSystemPublicRoutes: true,
+  useFileSystemPublicRoutes: true
 };
 
 module.exports = nextConfig;

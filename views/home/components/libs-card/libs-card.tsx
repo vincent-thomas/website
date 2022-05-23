@@ -5,7 +5,7 @@ import { Variants } from "framer-motion";
 export const LibsCard = () => {
   return (
     <>
-      <Card>
+      <Card type='dark'>
         <TitleNormal>Libraries</TitleNormal>
         <TextNormal>
           I have contributed to the npm ecosystem with multiple packages that

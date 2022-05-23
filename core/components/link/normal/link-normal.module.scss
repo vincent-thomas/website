@@ -1,5 +1,7 @@
+@import "styles/_colors.scss";
+
 .link-normal {
-  color: #3e3e3e;
+  color: $clr-txt;
   font-weight: bold;
   text-decoration: none;
 }

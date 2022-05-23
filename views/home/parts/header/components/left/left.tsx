@@ -23,7 +23,7 @@ export const Left = () => {
         is the general public doesn&apos;t know now they exist
       </TextNormal>
       <div className={S["button-wrapper"]}>
-        <Card>
+        <Card type='dark'>
           <div className={S["button-container"]}>
             <LinkNotStyled href={SHORTS.EMAIL_ME_LINK}>
               <ButtonPrimary>Contact Me</ButtonPrimary>

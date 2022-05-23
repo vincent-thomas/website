@@ -1,10 +1,13 @@
+@import "styles/_constants";
+@import "styles/_colors";
+
 .wrapper {
-  background-color: var(--clr-light-background);
+  background-color: $clr-bg-light;
   z-index: 1;
 }
 
 .content {
-  max-width: var(--bp-max-width);
+  max-width: $max-width;
   margin: 0 auto;
   padding-inline: var(--sc-space);
   padding-block: 5rem;

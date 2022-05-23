@@ -1,12 +1,13 @@
+@import "styles/_constants";
+@import "styles/_colors";
+
 .wrapper {
-  background-color: #f6f6f6;
+  background-color: $clr-bg-light;
   width: 100%;
-  border-block: 1px solid #3e3e3e;
-  // position: sticky;
-  // top: 0;
+  border-block: 1px solid $clr-txt;
 
   .container {
-    max-width: var(--bp-max-width);
+    max-width: $max-width;
     margin: 0 auto;
     padding-inline: var(--sc-space);
     padding-block: calc(var(--sc-space) / 3);

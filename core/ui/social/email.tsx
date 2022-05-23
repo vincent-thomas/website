@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { HoverBackground } from "core/ui/hover-background/hover-background";
 import { motion } from "framer-motion";
 import { LinkNotStyled } from "core/components/link/not-styled";
@@ -12,7 +11,7 @@ export const SocialEmailIcon = () => {
     >
       <LinkNotStyled href='mailto:vincent.nathan.thomas@gmail.com'>
         <HoverBackground style={{ display: "grid", placeItems: "center" }}>
-          <Image
+          <img
             width='30'
             height='30'
             src='/material_icon-email_white.svg'

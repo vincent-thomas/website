@@ -7,7 +7,7 @@ import { AppsModal } from "./apps-modal";
 export const AppsCard = () => {
   return (
     <>
-      <Card>
+      <Card type='dark'>
         <TitleNormal>Apps</TitleNormal>
         <TextNormal>
           I have made web-applications with different variations of use cases,

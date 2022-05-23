@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import NImage from "next/image";
 
 import S from "./image.module.scss";
 

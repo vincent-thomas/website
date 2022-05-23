@@ -11,6 +11,7 @@ export const ButtonPrimary: FC<
   return (
     <button className={`${S["base"]}`} {...props}>
       {children}
+      <span className={S['decorate']}></span>
     </button>
   );
 };

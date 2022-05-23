@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import "styles/globals.css";
+import "styles/globals.scss";
 import styled, { ThemeProvider } from "styled-components";
 import { DarkTheme } from "../theme";
 import { Banner } from "core/ui";

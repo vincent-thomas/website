@@ -1,6 +1,5 @@
 import { TextNormal } from "core/components/text/normal";
 import { TitleNormal } from "core/components/title/normal";
-import Image from "next/image";
 import { Punctuation } from "core/ui/punctuation";
 import S from "./experience.module.scss";
 import { ButtonPrimary, ButtonSecondary } from "core/components";
@@ -14,7 +13,7 @@ export const Experience = () => {
         <div className={S["card-container"]}>
           <div className={`${S["images-container"]} ${S["js-ts-image"]}`}>
             <div className={S["js-image-wrapper"]}>
-              <Image
+              <img
                 src={"/js_logo.svg"}
                 alt=''
                 width='200'
@@ -23,8 +22,7 @@ export const Experience = () => {
               />
             </div>
             <div className={S["ts-image-wrapper"]}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <Image
+              <img
                 src='/ts_logo.svg'
                 height='200'
                 width='200'
@@ -66,7 +64,7 @@ export const Experience = () => {
               className={`${S["image-wrapper"]} ${S["margin-down"]} ${S["react-angular-container"]}`}
             >
               <div className={S["react-image-wrapper"]}>
-                <Image
+                <img
                   src={"/react_logo.svg"}
                   alt=''
                   width='225'
@@ -74,7 +72,7 @@ export const Experience = () => {
                   className={S["react-image"]}
                 />
               </div>
-              <Image
+              <img
                 src={"/angular_logo.svg"}
                 alt=''
                 width='250'
@@ -86,7 +84,7 @@ export const Experience = () => {
         </div>
         <div className={S["card-container"]}>
           <div className={S["image-wrapper"]}>
-            <Image src={"/nestjs_logo.svg"} alt='' width='225' height='225' />
+            <img src={"/nestjs_logo.svg"} alt='' width='225' height='225' />
           </div>
           <div className={S["desc"]}>
             <TitleNormal>Nestjs</TitleNormal>

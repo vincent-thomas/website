@@ -12,12 +12,9 @@ export default function Document() {
         <script src='https://unpkg.com/kursor' />
       </Head>
       <body>
-        {" "}
         <script
           dangerouslySetInnerHTML={{
-            __html: `
-      new kursor({ type: 1, removeDefaultCursor: true });
-      `,
+            __html: `new kursor({ type: 1, removeDefaultCursor: true });`
           }}
         />
         <Main />

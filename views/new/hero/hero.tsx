@@ -1,6 +1,5 @@
-import { ButtonPrimary, ButtonSecondary, LinkNotStyled } from "core/components";
+import { ButtonPrimary, LinkNotStyled, TitleNormal } from "core/components";
 import { Underline } from "core/ui/underline";
-import { ColorLines } from "../color-lines/color-lines";
 import { Banner } from "./components/banner";
 import { Image as MyImg } from "./components/image";
 import { Wrapper } from "./components/wrapper";
@@ -13,10 +12,10 @@ export const NewHero = () => {
       <Wrapper>
         <div className={S["content"]}>
           <div className={S["left-container"]}>
-            <h1 className={S["title"]}>
-              I&rsquo;m <Underline>Vincent Thomas</Underline> . You&rsquo;ve
-              found me, I turn food and hard work into websites.
-            </h1>
+            <TitleNormal size='big' className={S["title"]}>
+              Hi! I&rsquo;m <Underline>Vincent Thomas</Underline> , You found
+              me. I turn food and hard work into websites.
+            </TitleNormal>
             <div className={S["button-container"]}>
               <LinkNotStyled href='mailto:vincent.nathan.thomas@gmail.com'>
                 <ButtonPrimary>Contact Me</ButtonPrimary>

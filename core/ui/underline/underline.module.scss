@@ -1,3 +1,5 @@
+@import "styles/_colors";
+
 @keyframes ani {
   0% {
     width: 0%;
@@ -16,7 +18,7 @@
   display: flex;
   justify-content: space-between;
   gap: 0.3rem;
-  background-color: var(--clr-accent);
+  background-color: $clr-accent;
   padding: 0.1rem;
   animation: ani 0.5s ease 0.75s both;
 

@@ -3,7 +3,6 @@ import { TextNormal } from "core/components/text/normal";
 import { TitleNormal } from "core/components/title/normal";
 import { Card } from "core/ui/card";
 import { Modal } from "@v-thomas/core-ui";
-import Image from "next/image";
 import { LinkNormal } from "@/core/components";
 
 export const AppsModal = ({
@@ -17,7 +16,7 @@ export const AppsModal = ({
     <Modal isOpen={isOpen}>
       <TitleNormal>Applications</TitleNormal>
       <ButtonNotStyled onClick={toggleOff}>
-        <Image
+        <img
           width='30'
           height='30'
           src='https://assets.v-thomas.me/x-mark.svg'
@@ -28,7 +27,7 @@ export const AppsModal = ({
         Here are some of the apps that i have made/created
       </TextNormal>
 
-      <Card style={{ cursor: "unset" }}>
+      <Card style={{ cursor: "unset" }} type='dark'>
         <TitleNormal>MovieReviewer</TitleNormal>
         <LinkNormal href='//link.v-thomas.me/movie' target='_blank'>
           https://movie.v-thomas.me

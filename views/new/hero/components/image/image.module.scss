@@ -1,6 +1,7 @@
 $size: 15%;
 $space: 0.35rem;
 
+@import "styles/_colors";
 .image-container {
   position: relative;
   width: 375px;
@@ -19,8 +20,8 @@ $space: 0.35rem;
   position: absolute;
   top: -$space;
   right: -$space;
-  border-top: 1px solid #3e3e3e;
-  border-right: 1px solid #3e3e3e;
+  border-top: 1px solid $clr-txt;
+  border-right: 1px solid $clr-txt;
   width: $size;
   height: $size;
 }
@@ -30,7 +31,7 @@ $space: 0.35rem;
   height: 100%;
   &-wrapper {
     overflow: hidden;
-    outline: 1px solid #3e3e3e;
+    outline: 1px solid $clr-txt;
   }
 }
 
@@ -38,8 +39,8 @@ $space: 0.35rem;
   position: absolute;
   bottom: -$space;
   left: -$space;
-  border-bottom: 1px solid #3e3e3e;
-  border-left: 1px solid #3e3e3e;
+  border-bottom: 1px solid $clr-txt;
+  border-left: 1px solid $clr-txt;
   width: $size;
   height: $size;
 }

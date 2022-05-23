@@ -1,8 +1,30 @@
+@import "styles/_constants";
+@import "styles/_colors";
+
 .wrapper {
+  background-color: $clr-bg-light;
+  padding-block: var(--sc-space);
+  gap: var(--sc-space);
+
   .container {
+    position: static;
+    max-width: $max-width;
     padding: var(--sc-space);
-    max-width: var(--bp-max-width);
     margin: 0 auto;
+  }
+
+  .container-2 {
+    padding: var(--sc-space);
+    position: static;
+    max-width: $max-width;
+    margin-inline: auto;
+    max-height: 500px;
+    display: flex;
+    justify-content: space-between;
+
+    &.revert {
+      flex-direction: row-reverse;
+    }
   }
 }
 
@@ -16,8 +38,19 @@
   text-align: right;
 }
 
+.image {
+  border-radius: var(--border-radius);
+  max-width: 50%;
+  max-height: 100%;
+}
+
+#sail-image {
+  // max-width: 50%;
+  // max-height: 100%;
+}
+
 .to-right {
-  margin-left: 0 auto;
+  margin-left: auto;
   text-align: right;
 
   position: relative;
@@ -27,7 +60,7 @@
 }
 
 .to-left {
-  margin-right: 0 auto;
+  margin-right: auto;
   text-align: left;
 
   position: relative;
