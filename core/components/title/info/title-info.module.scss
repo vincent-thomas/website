@@ -1,6 +1,19 @@
+@import "styles/_colors";
+@import "styles/_constants";
+
 .title-info {
-  color: rgba(62, 62, 62, 0.08);
+  color: $clr-txt;
   font-size: 10rem;
   font-weight: 700;
   font-style: italic;
+
+  @media screen and (max-width: $bp-big) {
+    font-weight: 600;
+    font-size: 6rem;
+  }
+
+  @media screen and (max-width: 700px) {
+    font-weight: 600;
+    font-size: 4rem;
+  }
 }

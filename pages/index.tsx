@@ -1,15 +1,8 @@
 import type { NextPage } from "next";
-import dynamic from "next/dynamic";
 import Head from "next/head";
-import { ColorLines } from "views/new/color-lines/color-lines";
-import { NewHero } from "views/new/hero/hero";
-
-const DynamicComponentWithNoSSR = dynamic(
-  () => import("../views/new/i-am/i-am"),
-  {
-    ssr: false
-  }
-);
+import ColorLines from "@/views/home/color-lines";
+import Hero from "@/views/home/hero";
+import IAm from "@/views/home/i-am";
 
 const NewHomePage: NextPage = () => {
   return (
@@ -21,9 +14,9 @@ const NewHomePage: NextPage = () => {
           content="Hi! I'm Vincent Thomas, a 15 year old software developer who likes coding. This is my page. Pay a visit?"
         />
       </Head>
-      <NewHero />
+      <Hero />
       <ColorLines />
-      <DynamicComponentWithNoSSR />
+      <IAm />
       <ColorLines flip />
     </>
   );

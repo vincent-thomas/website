@@ -6,7 +6,7 @@ import { Wrapper } from "./components/wrapper";
 
 import S from "./hero.module.scss";
 
-export const NewHero = () => {
+const Hero = () => {
   return (
     <>
       <Wrapper>
@@ -31,3 +31,5 @@ export const NewHero = () => {
     </>
   );
 };
+
+export default Hero;

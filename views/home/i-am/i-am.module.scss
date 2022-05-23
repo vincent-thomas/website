@@ -4,24 +4,29 @@
 .wrapper {
   background-color: $clr-bg-light;
   padding-block: var(--sc-space);
-  gap: var(--sc-space);
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $clr-txt;
+  gap: 10rem;
 
   .container {
     position: static;
     max-width: $max-width;
     padding: var(--sc-space);
     margin: 0 auto;
+    width: 100%;
   }
 
-  .container-2 {
+  .section {
     padding: var(--sc-space);
     position: static;
+    width: 100%;
     max-width: $max-width;
     margin-inline: auto;
-    max-height: 500px;
     display: flex;
     justify-content: space-between;
-
+    flex-wrap: wrap;
+    gap: var(--sc-space);
     &.revert {
       flex-direction: row-reverse;
     }
@@ -40,8 +45,9 @@
 
 .image {
   border-radius: var(--border-radius);
-  max-width: 50%;
-  max-height: 100%;
+  max-width: 400px;
+  max-height: 400px;
+  width: 40%;
 }
 
 #sail-image {
@@ -50,23 +56,29 @@
 }
 
 .to-right {
-  margin-left: auto;
+  position: relative;
   text-align: right;
 
-  position: relative;
-  right: -5rem;
-  width: calc(100% + 5rem);
-  left: 0;
+  @media screen and (min-width: $bp-big) {
+    margin-left: auto;
+
+    right: -5rem;
+    width: calc(100% + 5rem);
+    left: 0;
+  }
 }
 
 .to-left {
-  margin-right: auto;
   text-align: left;
 
   position: relative;
-  left: -5rem;
-  width: calc(100% + 5rem);
-  right: 0;
+
+  @media screen and (min-width: $bp-big) {
+    margin-right: auto;
+    left: -5rem;
+    width: calc(100% + 5rem);
+    right: 0;
+  }
 }
 
 .title-to-left {

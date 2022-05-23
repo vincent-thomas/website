@@ -1,6 +1,6 @@
-import { AppsCard } from "../../../home/components/apps-card/apps-card";
-import { LibsCard } from "../../../home/components/libs-card/libs-card";
-import { OtherCard } from "../../../home/components/other-card/libs-card";
+import { AppsCard } from "../../components/apps-card/apps-card";
+import { LibsCard } from "../../components/libs-card/libs-card";
+import { OtherCard } from "../../components/other-card/libs-card";
 import { Punctuation } from "core/ui/punctuation/punctuation";
 import S from "./features.module.scss";
 export const Features = () => {

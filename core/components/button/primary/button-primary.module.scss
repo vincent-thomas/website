@@ -2,19 +2,22 @@
 @import "styles/_colors";
 
 .base {
-  padding: 1rem 1.5rem;
+  padding: 1.25rem 1.5rem;
   border: 1px solid black;
   outline: none;
 
   transition: all $ani-time ease;
 
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+
+  font-weight: 500;
 
   background-color: $clr-accent;
   border-radius: var(--border-radius);
 
   &:hover {
-    background-color: $clr-accent-hover;
+    background-color: $clr-accent;
     transition: all $ani-time ease;
+    border: 1px solid $clr-accent;
   }
 }
