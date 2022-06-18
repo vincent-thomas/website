@@ -2,5 +2,6 @@
   "arrowParens": "avoid",
   "jsxSingleQuote": true,
   "useTabs": false,
-  "semi": true
+  "semi": true,
+  "trailingComma": "none"
 }

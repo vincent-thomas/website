@@ -1,0 +1,59 @@
+@import "styles/_constants";
+
+.content {
+  display: grid;
+
+  grid-template-rows: auto 1fr;
+
+  & > *:last-child {
+    grid-row: 1;
+  }
+  & > *:first-child {
+    grid-row: 2;
+  }
+  align-items: center;
+  gap: 3rem;
+
+  .left-container {
+    display: flex;
+    flex-direction: column;
+    margin-block: auto;
+    align-items: center;
+
+    .title {
+      text-align: center;
+    }
+
+    & > * {
+      width: 100%;
+    }
+    .button-container {
+      gap: 1rem;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .image-wrapper {
+    display: grid;
+    place-items: center;
+  }
+}
+
+@media screen and (min-width: $bp-big) {
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+  .left-container {
+    .title {
+      text-align: left !important;
+    }
+
+    .button-container {
+      justify-content: flex-start !important;
+    }
+  }
+}

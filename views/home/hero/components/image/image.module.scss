@@ -1,0 +1,46 @@
+$size: 15%;
+$space: 0.35rem;
+
+@import "styles/_colors";
+.image-container {
+  position: relative;
+  width: 375px;
+  height: 375px;
+  box-shadow: 10px 10px 2rem rgba(31, 31, 38, 0.2);
+  & .image-wrapper,
+  & .image {
+    width: 375px;
+    aspect-ratio: 1 / 1;
+    border-radius: 2.5px;
+  }
+  z-index: 1;
+}
+
+.up {
+  position: absolute;
+  top: -$space;
+  right: -$space;
+  border-top: 1px solid $clr-txt;
+  border-right: 1px solid $clr-txt;
+  width: $size;
+  height: $size;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  &-wrapper {
+    overflow: hidden;
+    outline: 1px solid $clr-txt;
+  }
+}
+
+.down {
+  position: absolute;
+  bottom: -$space;
+  left: -$space;
+  border-bottom: 1px solid $clr-txt;
+  border-left: 1px solid $clr-txt;
+  width: $size;
+  height: $size;
+}

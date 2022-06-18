@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+*::selection {
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(150, 180, 255, 0.4);
+  filter: opacity(0.6);
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+a,
+button {
+  cursor: pointer !important;
+  * {
+    cursor: pointer !important;
+  }
+}
+
+:root {
+  --clr-text-primary: hsl(0, 0%, 85%);
+  --clr-text-secondary: rgb(160, 160, 160);
+  --clr-text-third: rgb(140, 140, 140);
+
+  --clr-accent-primary: rgb(150, 180, 255);
+  --clr-accent-secondary: rgb(144, 140, 250);
+
+  --clr-background-primary: rgb(30, 30, 37);
+  --clr-background-accent: rgba(60, 60, 74, 0.2);
+  --clr-background-secondary: rgb(27, 27, 33);
+  --clr-background-third: rgb(25, 25, 30);
+  --clr-background-modal: rgba(0, 0, 0, 0.7);
+
+  --border-radius: 0.3rem;
+
+  --bp-max-width: 1100px;
+  --sc-space: 5rem;
+  --ani-time: 0.3s;
+
+  --clr-light-background: hsl(0, 0%, 95%);
+  --clr-dark-background: #1b1b21;
+  --clr-dark-background-secondary: #1e1e25;
+  --clr-accent: rgb(150, 180, 255);
+  --clr-text: #3e3e3e;
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --sc-space: 2.5rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  :root {
+    --sc-space: 1rem;
+  }
+}

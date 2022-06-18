@@ -1,0 +1,20 @@
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    & .button-wrapper {
+      margin: 0 auto;
+    }
+  }
+
+  gap: 2rem;
+
+  padding: var(--sc-space) 0;
+
+  max-width: var(--bp-max-width);
+  margin: 0 auto;
+}
