@@ -10,9 +10,7 @@ export const SharedNavbar = () => {
         <LinkNormal href='mailto:vincent.nathan.thomas@gmail.com'>
           Get in touch
         </LinkNormal>
-        {/* <Button variant='outlined'>About</Button>
-        <Button variant='contained'>hello</Button> */}
-      </ButtonContainer>
+     </ButtonContainer>
     </NavbarContainer>
   );
 };

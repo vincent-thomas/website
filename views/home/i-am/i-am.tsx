@@ -1,52 +1,37 @@
 import { TitleInfo, TitleNormal } from "@/core/components";
+import { Punctuation } from "@/core/ui/punctuation";
+import { IAmC } from "./components/i-am/i-am";
 import S from "./i-am.module.scss";
 
-const IAm = () => {
+export const IAm = () => {
   return (
     <div className={S["wrapper"]}>
-      <div className={S["container"]} id='who-iam' data-aos='fade-right'>
-        <TitleInfo className={S["to-right"]}>Who I am</TitleInfo>
-        <TitleNormal size='big' className={S["title"]}>
-          I am a{" "}
-          <div className={S["age-container"]}>
-            <span>15 year old</span>
-            <img src='/text-underline.svg' alt='' className={S["underline"]} />
-          </div>{" "}
-          Swedish <span style={{ lineBreak: "revert" }}>web-developer</span> who
-          likes to learn new things.
-        </TitleNormal>
-      </div>
-      <div className={`${S["section"]} ${S["revert"]}`} id='intrests'>
-        <img
-          src='/feva.svg'
-          alt=''
-          className={S["image"]}
-          id='sail-image'
-          data-aos='fade-up'
-        />
+      <div
+        className={S["container"]}
+        id='who-iam'
+        style={{
+          zIndex: 1
+        }}
+      >
+        <Punctuation text={"About me"} size='big' />
 
-        <div data-aos='fade-left'>
-          <TitleInfo className={S["to-left"]}>I like to</TitleInfo>
-          <TitleNormal
-            size='big'
-            className={`${S["title"]} ${S["title-to-left"]}`}
-          >
-            I like to be with friends, sail and code. My weapon of choice is
-            typescript.
-          </TitleNormal>
-        </div>
-      </div>
-      <div className={S["section"]} id='where'>
-        <img src='/home_black.svg' alt='' data-aos='fade-up' />
-        <div data-aos='fade-left'>
-          <TitleInfo className={S["to-right"]}>Up-growth</TitleInfo>
-          <TitleNormal size='big' className={`${S["title"]}`}>
-            Vincent grew up and is currently living in Göteborg, Sweden.
-          </TitleNormal>
+        <IAmC />
+
+        <div className={`${S["revert"]} ${S["two-container"]}`} id='intrests'>
+          <img src='/feva.svg' alt='' width='300' height='300' />
+          <div>
+            <TitleInfo>I like to...</TitleInfo>
+            <TitleNormal
+              size='big'
+              className={`${S["max-title-size-more"]} ${S["sailing-text"]}`}
+            >
+              Code, fiddle with config files, hangout with friends and sail a
+              boat called feva.
+              <img src='/sail-arrow.svg' alt='' />
+            </TitleNormal>
+          </div>
         </div>
       </div>
     </div>
   );
 };
-
-export default IAm;

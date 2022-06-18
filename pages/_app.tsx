@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     });
     Aos.refresh();
   }, []);
+
   return (
     <ThemeProvider theme={DarkTheme}>
       <Banner link={"//pureforms.net"}>

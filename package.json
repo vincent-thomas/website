@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "npm run bundle && npm run export",
+    "build": "sh ./scripts/build.sh",
     "serve": "sh ./scripts/serve.sh",
     "bundle": "sh ./scripts/bundle.sh",
     "export": "sh ./scripts/export.sh",
@@ -11,7 +11,8 @@
     "lint": "next lint",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "next": "next"
   },
   "dependencies": {
     "@v-thomas/core-ui": "^0.0.5",

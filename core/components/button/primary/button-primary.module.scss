@@ -17,7 +17,8 @@
 
   &:hover {
     background-color: $clr-accent;
+    box-shadow: 0 0 1.5rem 0.1rem inset rgba(0, 0, 0, 0.1);
     transition: all $ani-time ease;
-    border: 1px solid $clr-accent;
+    // border: 1px solid $clr-accent;
   }
 }

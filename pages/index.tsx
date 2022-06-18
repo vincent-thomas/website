@@ -2,7 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import ColorLines from "@/views/home/color-lines";
 import Hero from "@/views/home/hero";
-import IAm from "@/views/home/i-am";
+import { IAm } from "@/views/home/i-am";
+import { ProjectsView } from "@/views/home/projects";
 
 const NewHomePage: NextPage = () => {
   return (
@@ -17,7 +18,8 @@ const NewHomePage: NextPage = () => {
       <Hero />
       <ColorLines />
       <IAm />
-      <ColorLines flip />
+      <ColorLines />
+      <ProjectsView />
     </>
   );
 };

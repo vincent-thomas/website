@@ -1,0 +1,14 @@
+@import "styles/_constants.scss";
+@import "styles/_colors";
+
+.wrapper {
+  width: 100%;
+
+  background-color: $clr-accent-dark;
+
+  .container {
+    margin: 0 auto;
+    max-width: $max-width;
+    padding-inline: var(--sc-space);
+  }
+}

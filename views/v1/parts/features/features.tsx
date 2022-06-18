@@ -7,7 +7,7 @@ export const Features = () => {
   return (
     <div className={S["wrapper"]}>
       <div className={S["container"]}>
-        <Punctuation text='I have made' />
+        <Punctuation text='I have made' size='medium' />
         <div className={S["card-container"]}>
           <AppsCard />
           <LibsCard />

@@ -2349,7 +2349,7 @@ packages:
       '@storybook/core-events': 6.5.4
       '@storybook/csf': 0.0.2--canary.4566f4d.1
       '@storybook/docs-tools': 6.5.4_ef5jwxihqo6n7gxfmzogljlgcm
-      '@storybook/mdx1-csf': 0.0.1-canary.1.eed86d7.0_@babel+core@7.18.0
+      '@storybook/mdx1-csf': 0.0.2-canary.5.6cee405.0_obpnotbfpw3vqhxpouazlalzou
       '@storybook/node-logger': 6.5.4
       '@storybook/postinstall': 6.5.4
       '@storybook/preview-web': 6.5.4_ef5jwxihqo6n7gxfmzogljlgcm
@@ -3066,7 +3066,7 @@ packages:
       '@storybook/core-common': 6.5.4_e3msyftxz4gxiy567zkhfuokra
       '@storybook/core-events': 6.5.4
       '@storybook/csf': 0.0.2--canary.4566f4d.1
-      '@storybook/csf-tools': 6.5.4
+      '@storybook/csf-tools': 6.5.4_react@18.1.0
       '@storybook/manager-webpack4': 6.5.4_e3msyftxz4gxiy567zkhfuokra
       '@storybook/manager-webpack5': 6.5.4_e3msyftxz4gxiy567zkhfuokra
       '@storybook/node-logger': 6.5.4
@@ -3160,7 +3160,7 @@ packages:
       - webpack-command
     dev: true
 
-  /@storybook/csf-tools/6.5.4:
+  /@storybook/csf-tools/6.5.4_react@18.1.0:
     resolution: {integrity: sha512-mCAO8Ddig5PzXiI4HxiWhdLmPPpaovzVxqdh7g31k3fhpnRkQrKwftNGTW/ArFDdisMjB1+gm+ZOVACZg0pO4w==}
     peerDependencies:
       '@storybook/mdx2-csf': '*'
@@ -3176,13 +3176,14 @@ packages:
       '@babel/traverse': 7.18.0
       '@babel/types': 7.18.0
       '@storybook/csf': 0.0.2--canary.4566f4d.1
-      '@storybook/mdx1-csf': 0.0.1-canary.1.eed86d7.0_@babel+core@7.18.0
+      '@storybook/mdx1-csf': 0.0.2-canary.5.6cee405.0_obpnotbfpw3vqhxpouazlalzou
       core-js: 3.22.6
       fs-extra: 9.1.0
       global: 4.4.0
       regenerator-runtime: 0.13.9
       ts-dedent: 2.2.0
     transitivePeerDependencies:
+      - react
       - supports-color
     dev: true
 
@@ -3336,14 +3337,15 @@ packages:
       - webpack-command
     dev: true
 
-  /@storybook/mdx1-csf/0.0.1-canary.1.eed86d7.0_@babel+core@7.18.0:
-    resolution: {integrity: sha512-KOoTWeseRyJYU5qzEWahgNRhRLgHzPrWx4jIiK4oI9MmNx81cD0B0o24Gq04Iyt89X4jTk+VPHc5REJO1Gs99Q==}
+  /@storybook/mdx1-csf/0.0.2-canary.5.6cee405.0_obpnotbfpw3vqhxpouazlalzou:
+    resolution: {integrity: sha512-LRQ086H27/Ro8jQPoXb3hb0LgYokurqqFf4eDNSv/EqvzUihGrurvpiIGfTJ6JDzWZbiX1NIsqe8dx4jKpEGMw==}
     dependencies:
       '@babel/generator': 7.18.0
       '@babel/parser': 7.18.0
       '@babel/preset-env': 7.18.0_@babel+core@7.18.0
       '@babel/types': 7.18.0
       '@mdx-js/mdx': 1.6.22
+      '@mdx-js/react': 1.6.22_react@18.1.0
       '@types/lodash': 4.14.182
       js-string-escape: 1.0.1
       loader-utils: 2.0.2
@@ -3352,6 +3354,7 @@ packages:
       ts-dedent: 2.2.0
     transitivePeerDependencies:
       - '@babel/core'
+      - react
       - supports-color
     dev: true
 
@@ -6073,7 +6076,7 @@ packages:
     dev: true
 
   /default-browser-id/1.0.4:
-    resolution: {integrity: sha1-5Z0JpdFXuCi4dsJoFuYcPSosIDo=}
+    resolution: {integrity: sha512-qPy925qewwul9Hifs+3sx1ZYn14obHxpkX+mPD369w4Rzg+YkJBgi3SOvwUq81nWSjqGUegIgEPwD8u+HUnxlw==}
     engines: {node: '>=0.10.0'}
     hasBin: true
     requiresBuild: true

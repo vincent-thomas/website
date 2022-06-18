@@ -2,7 +2,12 @@
 @import "styles/_colors";
 
 .title {
-  color: $clr-txt;
+  &.dark {
+    color: $clr-txt-dark;
+  }
+  &.light {
+    color: $clr-txt;
+  }
 }
 
 .big {

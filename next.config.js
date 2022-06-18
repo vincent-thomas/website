@@ -18,9 +18,7 @@ const nextConfig = {
   distDir: "dist/server",
   swcMinify: true,
   poweredByHeader: false,
-  exportPathMap: false,
   optimizeFonts: true,
-
   images: {
     domains: ["assets.v-thomas.me"]
   },

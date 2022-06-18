@@ -16,7 +16,6 @@
 
   .left-container {
     display: flex;
-    gap: 1rem;
     flex-direction: column;
     margin-block: auto;
     align-items: center;
@@ -30,6 +29,7 @@
     }
     .button-container {
       gap: 1rem;
+      margin-top: 1rem;
       display: flex;
       align-items: center;
       justify-content: center;

@@ -1,1 +1,2 @@
-npm run bundle && npm run export
+npm run bundle
+npm run export

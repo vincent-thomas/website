@@ -8,7 +8,7 @@ export const Experience = () => {
   return (
     <div className={S["wrapper"]}>
       <div className={S["container"]}>
-        <Punctuation text='Experience' />
+        <Punctuation text='Experience' size='medium' />
 
         <div className={S["card-container"]}>
           <div className={`${S["images-container"]} ${S["js-ts-image"]}`}>
