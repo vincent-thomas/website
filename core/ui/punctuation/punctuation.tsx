@@ -1,4 +1,3 @@
-import { Row } from "@v-thomas/core-ui";
 import { motion } from "framer-motion";
 import { TitleNormal } from "@/core/components";
 import { ReactNode } from "react";
@@ -13,7 +12,7 @@ export const Punctuation = ({
   color?: "light" | "dark";
 }) => {
   return (
-    <Row
+    <motion.div
       style={{
         alignItems: "center",
         paddingBottom: "1rem",
@@ -46,6 +45,6 @@ export const Punctuation = ({
           {text}
         </TitleNormal>
       </motion.div>
-    </Row>
+    </motion.div>
   );
 };

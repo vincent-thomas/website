@@ -17,9 +17,9 @@ export const IAm = () => {
 
         <IAmC />
 
-        <div className={`${S["revert"]} ${S["two-container"]}`} id='intrests'>
+        <div className={` ${S["two-container"]}`} id='intrests'>
           <img src='/feva.svg' alt='' width='300' height='300' />
-          <div>
+          <div className={S["revert"]}>
             <TitleInfo>I like to...</TitleInfo>
             <TitleNormal
               size='big'

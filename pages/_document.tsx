@@ -9,14 +9,14 @@ export default function Document() {
           rel='stylesheet'
         />
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        {/* <script src='https://unpkg.com/kursor' /> */}
+        <script src='https://unpkg.com/kursor' />
       </Head>
       <body>
-        {/* <script
+        <script
           dangerouslySetInnerHTML={{
-            __html: `new kursor({ type: 1, removeDefaultCursor: true });`
+            __html: `if (localStorage.getItem("custom-cursor") === "true") {new kursor({ type: 1, removeDefaultCursor: true });}`
           }}
-        /> */}
+        />
         <Main />
         <NextScript />
       </body>

@@ -11,11 +11,7 @@ export const SocialGithubIcon: FC<{ type: "white" | "black" }> = ({ type }) => {
         transition={{ delay: 0.75, duration: 0.25 }}
         style={{ display: "grid", placeItems: "center" }}
       >
-        {type === "black" ? (
-          <img src='/github-black_logo.png' alt='' width='30' height='30' />
-        ) : (
-          <img src='/github-logo.svg' alt='' width='30' height='30' />
-        )}
+        <img src={`/github-logo_${type}.svg`} alt='' width='30' height='30' />
       </HoverBackground>
     </ButtonNotStyled>
   );

@@ -18,9 +18,6 @@ specifiers:
   '@types/react-dom': 18.0.3
   '@types/scrollmagic': ^2.0.2
   '@types/styled-components': ^5.1.25
-  '@v-thomas/core-ui': ^0.0.5
-  '@v-thomas/hooks': ^0.0.1
-  animated-scroll-to: ^2.2.0
   aos: ^2.3.4
   babel-loader: ^8.2.5
   critters: ^0.0.16
@@ -29,7 +26,6 @@ specifiers:
   eslint: 8.14.0
   eslint-config-next: 12.1.6
   framer-motion: ^6.3.3
-  gsap: ^3.10.4
   husky: ^7.0.4
   kursor: ^0.1.6
   next: 12.1.6
@@ -41,7 +37,6 @@ specifiers:
   react-scroll-motion: ^0.2.6
   sass: ^1.51.0
   sass-loader: ^12.6.0
-  scrollmagic: ^2.0.8
   sharp: ^0.30.4
   style-loader: ^3.3.1
   styled-components: ^5.3.5
@@ -49,20 +44,15 @@ specifiers:
   webpack: ^5.72.1
 
 dependencies:
-  '@v-thomas/core-ui': 0.0.5_wgg6mzdx3un3pbmkjhpk7zk2ve
-  '@v-thomas/hooks': 0.0.1_react@18.1.0
-  animated-scroll-to: 2.2.0
   aos: 2.3.4
   critters: 0.0.16
   framer-motion: 6.3.3_ef5jwxihqo6n7gxfmzogljlgcm
-  gsap: 3.10.4
   kursor: 0.1.6_webpack@5.72.1
   next: 12.1.6_h5hi32ym2ljwwjosroyxdqeqkm
   next-seo: 5.4.0_2mgcgz5qhsdxw4fgpqzqeafmkq
   react: 18.1.0
   react-dom: 18.1.0_react@18.1.0
   react-scroll-motion: 0.2.6_ef5jwxihqo6n7gxfmzogljlgcm
-  scrollmagic: 2.0.8
   sharp: 0.30.5
   styled-components: 5.3.5_4klixn56hmiqf6hh5nx3jyckvq
 
@@ -3993,28 +3983,6 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@v-thomas/core-ui/0.0.5_wgg6mzdx3un3pbmkjhpk7zk2ve:
-    resolution: {integrity: sha512-494dpRLTdz4PiNh1yXBfcy5TF3UyR6oz1r8csETsfa+c5nC7hZrjto4U3QkLwwX2LTj0d6LV7STXjx9zWjq64Q==}
-    peerDependencies:
-      framer-motion: ^6.2.9
-      react: 18.0.0
-      react-router-dom: 6.3.0
-      styled-components: 5.3.5
-    dependencies:
-      framer-motion: 6.3.3_ef5jwxihqo6n7gxfmzogljlgcm
-      react: 18.1.0
-      react-router-dom: 6.3.0_ef5jwxihqo6n7gxfmzogljlgcm
-      styled-components: 5.3.5_4klixn56hmiqf6hh5nx3jyckvq
-    dev: false
-
-  /@v-thomas/hooks/0.0.1_react@18.1.0:
-    resolution: {integrity: sha512-wsgnZXmwUzbOu3cnmfehKzwhVte/wr+jJntW+Klt/4G0dMsZ5gRzsgyiA6zVBfislbf3oglR5oijxs/VHxlBbg==}
-    peerDependencies:
-      react: ^16.8.6
-    dependencies:
-      react: 18.1.0
-    dev: false
-
   /@vuepress/shared-utils/1.9.7:
     resolution: {integrity: sha512-lIkO/eSEspXgVHjYHa9vuhN7DuaYvkfX1+TTJDiEYXIwgwqtvkTv55C+IOdgswlt0C/OXDlJaUe1rGgJJ1+FTw==}
     dependencies:
@@ -4408,10 +4376,6 @@ packages:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
     dev: true
-
-  /animated-scroll-to/2.2.0:
-    resolution: {integrity: sha512-VVhwrii9tMXwP1GlQacLplUrh/0x2IbU/JxTUMBvzam6lJpJ9jMCw8PKHOvqMJ52vYmBDfcf9lNDuSeoWCD/mw==}
-    dev: false
 
   /ansi-align/3.0.1:
     resolution: {integrity: sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w==}
@@ -7645,10 +7609,6 @@ packages:
       strip-bom-string: 1.0.0
     dev: false
 
-  /gsap/3.10.4:
-    resolution: {integrity: sha512-6QatdkKxXCMfvCW4rM++0RqyLQAzFX5nwl3yHS0XPgkZBkiSEY3VZVbMltrdtsbER/xZonLtyHt684wRp4erlQ==}
-    dev: false
-
   /handlebars/4.7.7:
     resolution: {integrity: sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==}
     engines: {node: '>=0.4.7'}
@@ -8605,7 +8565,7 @@ packages:
     dev: true
 
   /js-string-escape/1.0.1:
-    resolution: {integrity: sha1-4mJbrbwNZ8dTPp7cEGjFh65BN+8=}
+    resolution: {integrity: sha512-Smw4xcfIQ5LVjAOuJCvN/zIodzA/BBSsluuoSykP+lUvScIi4U6RJLfwHet5cxFnCswUjISV8oAXaqaJDY3chg==}
     engines: {node: '>= 0.8'}
     dev: true
 
@@ -8869,7 +8829,7 @@ packages:
     dev: false
 
   /lodash.uniq/4.5.0:
-    resolution: {integrity: sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=}
+    resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}
     dev: true
 
   /lodash/4.17.21:
@@ -9022,7 +8982,7 @@ packages:
     dev: true
 
   /mdurl/1.0.1:
-    resolution: {integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=}
+    resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==}
     dev: true
 
   /media-typer/0.3.0:
@@ -10971,7 +10931,7 @@ packages:
     engines: {node: '>=0.10.0'}
 
   /repeat-string/1.6.1:
-    resolution: {integrity: sha1-jcrkcOHIirwtYA//Sndihtp15jc=}
+    resolution: {integrity: sha512-PV0dzCYDNfRi1jCDbJzpW7jNNDRuCOG/jI5ctQcGKt/clZD+YcPS3yIlWuTJMmESC8aevCFmWJy5wjAFgNqN6w==}
     engines: {node: '>=0.10'}
 
   /repeating/2.0.1:
@@ -11192,11 +11152,6 @@ packages:
       ajv: 6.12.6
       ajv-keywords: 3.5.2_ajv@6.12.6
     dev: true
-
-  /scrollmagic/2.0.8:
-    resolution: {integrity: sha512-UYXEGBPVLziovXl3FjHGkY9c4UXKUKopIdXwWR2JapWxCo0U345wYegi7rcsv5vHf/ktc1bSNWy4QRFiV+Yccw==}
-    engines: {node: '>=0.10.x'}
-    dev: false
 
   /section-matter/1.0.0:
     resolution: {integrity: sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA==}
