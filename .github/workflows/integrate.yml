@@ -1,4 +1,6 @@
-on: push
+on:
+  push:
+    branches: [main]
 name: Integrate
 jobs:
   install_deps:
@@ -116,6 +118,9 @@ jobs:
   deploy:
     needs: [build, lint, artifacts-manager]
     runs-on: ubuntu-latest
+    environment:
+      name: Prod
+      url: https://about.v-thomas.me
     steps:
       - uses: actions/checkout@v2.1.0
       - name: Setup node
