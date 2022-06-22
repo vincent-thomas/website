@@ -24,6 +24,7 @@ const nextConfig = {
   typescript: {
     tsconfigPath: "./tsconfig.json"
   },
+
   basePath: "",
   useFileSystemPublicRoutes: true
 };

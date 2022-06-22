@@ -6,7 +6,7 @@ import S from "./banner.module.scss";
 
 export const Banner = () => {
   return (
-    <div className={S["wrapper"]}>
+    <div className={S["wrapper"]} data-test='social-bar'>
       <div className={S["container"]}>
         <div className={S["left"]}>
           <LinkNormal href='#who-iam'>

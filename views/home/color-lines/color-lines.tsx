@@ -3,7 +3,7 @@ import S from "./color-lines.module.scss";
 
 const ColorLines: FC<{ flip?: boolean }> = ({ flip = false }) => {
   return (
-    <div className={S["wrapper"]}>
+    <div className={S["wrapper"]} data-test='color-lines'>
       <div className={`${S["container"]} ${flip && S["flip"]}`}>
         <div className={S["cover"]}></div>
         <div className={S["top"]} />

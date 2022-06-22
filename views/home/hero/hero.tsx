@@ -17,20 +17,28 @@ const Hero = () => {
       <Wrapper>
         <div className={S["content"]}>
           <div className={S["left-container"]}>
-            <TitleInfo data-hero-title-header>Hi!</TitleInfo>
-            <TitleNormal size='big' className={S["title"]} data-hero-title>
+            <TitleInfo data-test='hero-title-header'>Hi!</TitleInfo>
+            <TitleNormal
+              size='big'
+              className={S["title"]}
+              data-test='hero-title'
+            >
               I&rsquo;m <Underline>Vincent Thomas</Underline> , You found me. I
               turn food and hard work into websites.
             </TitleNormal>
             <div className={S["button-container"]}>
               <LinkNotStyled href='mailto:vincent.nathan.thomas@gmail.com'>
-                <ButtonPrimary data-button-contact>Contact Me</ButtonPrimary>
+                <ButtonPrimary data-test='button-contact'>
+                  Contact Me
+                </ButtonPrimary>
               </LinkNotStyled>
-              <ButtonSecondary data-button-about>About Me</ButtonSecondary>
+              <ButtonSecondary data-test='button-about'>
+                About Me
+              </ButtonSecondary>
             </div>
           </div>
           <div className={S["image-wrapper"]}>
-            <MyImg data-image-me />
+            <MyImg data-test='image-me' />
           </div>
         </div>
       </Wrapper>

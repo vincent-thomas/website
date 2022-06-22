@@ -11,9 +11,10 @@
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "e2e:open": "cypress open",
+    "e2e:run": "cypress run",
     "next": "next",
-    "test:e2e:open": "cypress open",
-    "test:e2e:run": "cypress run"
+    "next-tel-disable": "next telemetry disable"
   },
   "dependencies": {
     "aos": "^2.3.4",

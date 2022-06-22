@@ -1,7 +1,6 @@
 import type { AppProps } from "next/app";
 import "styles/globals.scss";
-import styled, { ThemeProvider } from "styled-components";
-import { DarkTheme } from "../theme";
+import styled from "styled-components";
 import { Banner } from "core/ui";
 import "kursor/dist/kursor.css";
 import { useEffect } from "react";
@@ -22,8 +21,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <ThemeProvider theme={DarkTheme}>
-      <Banner link={"//pureforms.net"} data-banner-pureforms>
+    <>
+      <Banner link={"//pureforms.net"} data-test='banner-pureforms'>
         Checkout PureForms, a developer-friendly alternative to Typeform. Sign
         up for the waitlist today!
       </Banner>
@@ -31,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Core>
         <Component {...pageProps} />
       </Core>
-    </ThemeProvider>
+    </>
   );
 }
 
