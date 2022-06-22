@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider theme={DarkTheme}>
-      <Banner link={"//pureforms.net"}>
+      <Banner link={"//pureforms.net"} data-banner-pureforms>
         Checkout PureForms, a developer-friendly alternative to Typeform. Sign
         up for the waitlist today!
       </Banner>

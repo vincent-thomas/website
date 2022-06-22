@@ -17,20 +17,20 @@ const Hero = () => {
       <Wrapper>
         <div className={S["content"]}>
           <div className={S["left-container"]}>
-            <TitleInfo>Hi!</TitleInfo>
-            <TitleNormal size='big' className={S["title"]}>
+            <TitleInfo data-hero-title-header>Hi!</TitleInfo>
+            <TitleNormal size='big' className={S["title"]} data-hero-title>
               I&rsquo;m <Underline>Vincent Thomas</Underline> , You found me. I
               turn food and hard work into websites.
             </TitleNormal>
             <div className={S["button-container"]}>
               <LinkNotStyled href='mailto:vincent.nathan.thomas@gmail.com'>
-                <ButtonPrimary>Contact Me</ButtonPrimary>
+                <ButtonPrimary data-button-contact>Contact Me</ButtonPrimary>
               </LinkNotStyled>
-              <ButtonSecondary>About Me</ButtonSecondary>
+              <ButtonSecondary data-button-about>About Me</ButtonSecondary>
             </div>
           </div>
           <div className={S["image-wrapper"]}>
-            <MyImg />
+            <MyImg data-image-me />
           </div>
         </div>
       </Wrapper>

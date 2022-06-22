@@ -5,6 +5,7 @@ import S from "./banner.module.scss";
 export const Banner: FC<{ children: ReactNode; link?: string }> = ({
   children,
   link,
+  ...props
 }) => {
   return (
     <LinkNotStyled
@@ -12,6 +13,7 @@ export const Banner: FC<{ children: ReactNode; link?: string }> = ({
       href={link ? link : "#"}
       target={link ? "_blank" : "_self"}
       rel='noreferrer'
+      {...props}
     >
       <span className={S["content"]}>{children}</span>
     </LinkNotStyled>

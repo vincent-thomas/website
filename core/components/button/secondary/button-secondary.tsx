@@ -7,6 +7,10 @@ export const ButtonSecondary: FC<
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   >
-> = ({ children }) => {
-  return <button className={S["base"]}>{children}</button>;
+> = ({ children, ...props }) => {
+  return (
+    <button className={S["base"]} {...props}>
+      {children}
+    </button>
+  );
 };

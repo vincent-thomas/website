@@ -1,7 +1,11 @@
+name: Integration/Delivery
+concurrency:
+  group: main-ci/cd
+  cancel-in-progress: true
+
 on:
   push:
     branches: [main]
-name: Integrate
 jobs:
   install_deps:
     runs-on: ubuntu-latest
@@ -27,7 +31,7 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
-    name: Lint
+    name: Lint Files
     needs: install_deps
     steps:
       - uses: actions/checkout@v2.1.0
@@ -59,13 +63,15 @@ jobs:
         run: pnpm install
         working-directory: .
 
+      - run: next telemetry disable
+
       - name: Lint Project
         run: pnpm lint
         working-directory: .
 
   build:
     runs-on: ubuntu-latest
-    name: Build
+    name: Build Website
     needs: install_deps
     strategy:
       fail-fast: true
@@ -87,6 +93,8 @@ jobs:
       - name: Install Deps
         run: pnpm install --frozen-lockfile
 
+      - run: next telemetry disable
+
       - name: Build Project
         run: pnpm build && pnpm export
         working-directory: .
@@ -99,6 +107,7 @@ jobs:
   artifacts-manager:
     runs-on: ubuntu-latest
     needs: build
+    name: Save artifacts from Build
     steps:
       - uses: actions/checkout@v2.1.0
 
@@ -118,6 +127,7 @@ jobs:
   deploy:
     needs: [build, lint, artifacts-manager]
     runs-on: ubuntu-latest
+    name: Deploy from Artifacts
     environment:
       name: Prod
       url: https://about.v-thomas.me
@@ -138,3 +148,4 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} #Required
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required
           working-directory: out
+          vercel-args: "--prod"
