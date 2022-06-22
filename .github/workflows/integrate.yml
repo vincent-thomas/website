@@ -1,36 +1,23 @@
 on: push
-
+name: Integrate
 jobs:
   install_deps:
     runs-on: ubuntu-latest
-    name: Integrate
+    name: Install Deps
 
     steps:
       - uses: actions/checkout@v2.1.0
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14
-
       - uses: pnpm/action-setup@v2.0.1
         name: Install pnpm
         id: pnpm-install
         with:
           version: 7
           run_install: false
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: |
-          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
-
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
+      - name: Setup node
+        uses: actions/setup-node@v3
         with:
-          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store
+          cache: "pnpm"
+          node-version: 14
 
       - name: Install dependencies
         run: pnpm install
@@ -42,22 +29,22 @@ jobs:
     needs: install_deps
     steps:
       - uses: actions/checkout@v2.1.0
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14
-
       - uses: pnpm/action-setup@v2.0.1
         name: Install pnpm
         id: pnpm-install
         with:
           version: 7
           run_install: false
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          cache: "pnpm"
+          node-version: 14
 
       - name: Get pnpm store directory
         id: pnpm-cache
         run: |
-          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+          echo '::set-output name=pnpm_cache_dir::$(pnpm store path)'
 
       - uses: actions/cache@v3
         name: Setup pnpm cache
@@ -81,41 +68,68 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        node_version: ["14.x", "16.x"]
-        build_script:
-          - pnpm run build
-          - pnpm run build && pnpm run export
+        node_version: [14, 16]
     steps:
       - uses: actions/checkout@v2.1.0
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node_version }}
-
       - uses: pnpm/action-setup@v2.0.1
         name: Install pnpm
         id: pnpm-install
         with:
           version: 7
           run_install: false
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: |
-          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
-
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
+      - uses: actions/setup-node@v3
         with:
-          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store
+          node-version: ${{matrix.node_version}}
+          cache: "pnpm"
 
       - name: Install Deps
-        run: pnpm install
-        working-directory: .
+        run: pnpm install --frozen-lockfile
 
       - name: Build Project
-        run: ${{ matrix.build_script }}
+        run: pnpm build && pnpm export
         working-directory: .
+
+      - uses: actions/cache@v3
+        with:
+          path: out
+          key: ${{hashFiles('pnpm-lock.yaml', './next.config.js', 'views/**', 'pages/**', 'public/**', 'styles/**', 'core/**')}}
+
+  artifacts-manager:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v2.1.0
+
+      - uses: actions/cache@v3
+        with:
+          path: out
+          key: ${{hashFiles('pnpm-lock.yaml', './next.config.js', 'views/**', 'pages/**', 'public/**', 'styles/**', 'core/**')}}
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: web-output
+          path: out
+          if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
+
+  # E2E tests testing the artifact in the future
+
+  deploy:
+    needs: [build, lint, artifacts-manager]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.1.0
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - uses: actions/download-artifact@v3
+        with:
+          name: web-output
+          path: out
+      - uses: amondnet/vercel-action@v20 #deploy
+        with:
+          vercel-token: ${{ secrets.VERCEL_SECRET }} # Required
+          github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} #Required
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required
+          working-directory: out
