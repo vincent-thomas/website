@@ -1,1 +1,0 @@
-npx serve dist/static

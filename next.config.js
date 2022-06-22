@@ -10,12 +10,9 @@ const nextConfig = {
       exclude: ["error", "warn", "log", "*"]
     }
   },
-  publicRuntimeConfig: {
-    staticFolder: "/static"
-  },
+
   cleanDistDir: true,
   compress: true,
-  distDir: "dist/server",
   swcMinify: true,
   poweredByHeader: false,
   optimizeFonts: true,
