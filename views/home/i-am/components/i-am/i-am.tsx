@@ -3,7 +3,7 @@ import Shared from "../../i-am.module.scss";
 
 export const IAmC = () => {
   return (
-    <div className={Shared["section"]}>
+    <div className={Shared["section"]} data-test='about-me-iam'>
       <TitleInfo>I am...</TitleInfo>
       <TitleNormal
         size='big'

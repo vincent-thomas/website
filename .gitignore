@@ -36,3 +36,4 @@ yarn-error.log*
 
 .vercel
 cypress/artifacts
+storybook-static

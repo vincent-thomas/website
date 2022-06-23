@@ -5,37 +5,13 @@ concurrency:
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  install_deps:
-    runs-on: ubuntu-latest
-    name: Install Deps
-
-    steps:
-      - uses: actions/checkout@v2.1.0
-      - uses: pnpm/action-setup@v2.0.1
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          version: 7
-          run_install: false
-      - name: Setup node
-        id: deps_cache
-        uses: actions/setup-node@v3
-        with:
-          cache: "pnpm"
-          node-version: 14
-
-      - name: Install dependencies
-        if: ${{ steps.deps_cache.outputs.cache-hit == false }}
-        run: pnpm install
-        working-directory: .
-
   lint:
     runs-on: ubuntu-latest
     name: Lint Files
-    needs: install_deps
     steps:
       - uses: actions/checkout@v2.1.0
       - uses: pnpm/action-setup@v2.0.1
@@ -75,11 +51,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build Website
-    needs: install_deps
-    strategy:
-      fail-fast: true
-      matrix:
-        node_version: [14, 16]
     steps:
       - uses: actions/checkout@v2.1.0
       - uses: pnpm/action-setup@v2.0.1
@@ -90,7 +61,7 @@ jobs:
           run_install: false
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{matrix.node_version}}
+          node-version: 16
           cache: "pnpm"
 
       - name: Install Deps
@@ -99,42 +70,80 @@ jobs:
       - run: pnpm next-tel-disable
 
       - name: Build Project
-        run: pnpm build && pnpm export
+        run: pnpm build
         working-directory: .
-
-      - uses: actions/cache@v3
-        with:
-          path: out
-          key: ${{hashFiles('pnpm-lock.yaml', './next.config.js', 'views/**', 'pages/**', 'public/**', 'styles/**', 'core/**')}}
-
-  artifacts-manager:
-    runs-on: ubuntu-latest
-    needs:
-      - build
-      - lint
-    name: Save artifacts from Build
-    steps:
-      - uses: actions/checkout@v2.1.0
-
-      - uses: actions/cache@v3
-        with:
-          path: out
-          key: ${{hashFiles('pnpm-lock.yaml', './next.config.js', 'views/**', 'pages/**', 'public/**', 'styles/**', 'core/**')}}
 
       - uses: actions/upload-artifact@v3
         with:
           name: web-output
           path: out
-          if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
+          if-no-files-found: error
 
-  # E2E tests testing the artifact in the future
+  deploy_staging:
+    runs-on: ubuntu-latest
+    name: Deploy Staging
+    needs: build
+    outputs:
+      url: ${{steps.deploy_staging.outputs.preview-url}}
+    steps:
+      - uses: actions/checkout@v2.1.0
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - uses: actions/download-artifact@v3
+        with:
+          name: web-output
+          path: out
+      - uses: amondnet/vercel-action@v20 #deploy
+        id: deploy_staging
+        with:
+          vercel-token: ${{ secrets.VERCEL_SECRET }} # Required
+          github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} #Required
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required
+          working-directory: out
+
+  build_storybook_and_deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    name: Build and deploy Storybook
+    environment: Storybook
+    steps:
+      - uses: actions/checkout@v2
+      - uses: aws-action/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-north-1
+
+      - uses: pnpm/action-setup@v2.0.1
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "pnpm"
+
+      - name: Install Deps
+        run: pnpm install --frozen-lockfile
+
+      - run: pnpm next-tel-disable
+
+      - name: Build Project
+        run: pnpm build:storybook
+
+      - run: aws s3 sync storybook-static/ s3://${{ secrets.AWS_S3_CONTENT_BUCKET }} --delete
+      - run: aws cloudfront create-invalidation --distribution-id ${{secrets.AWS_STORYBOOK_DISTRIBUTION_ID}} --paths '/*'
 
   cypress-test:
     runs-on: ubuntu-latest
     name: E2E Testing
     needs:
-      - build
-      - lint
+      - deploy_staging
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -152,20 +161,21 @@ jobs:
 
       - name: Install Deps
         run: pnpm install --frozen-lockfile
-      - uses: actions/cache@v3
+      - uses: actions/download-artifact@v3
         with:
+          name: web-output
           path: out
-          key: ${{hashFiles('pnpm-lock.yaml', './next.config.js', 'views/**', 'pages/**', 'public/**', 'styles/**', 'core/**')}}
-
       - name: Cypress run
         uses: cypress-io/github-action@v4.1.0
         with:
+          record: false
           install: false
-          start: npx serve ./out
+          config: baseUrl=${{needs.deploy_staging.outputs.url}}
+          # start: pnpm preview
   deploy:
     needs:
       - cypress-test
-      - artifacts-manager
+      - build_storybook_and_deploy
     runs-on: ubuntu-latest
     name: Deploy from Artifacts
     environment:
@@ -189,3 +199,13 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required
           working-directory: out
           vercel-args: "--prod"
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - uses: actions/checkout@master
+      - name: Lighthouse
+        uses: foo-software/lighthouse-check-action@master
+        with:
+          urls: "https://about.v-thomas.me"

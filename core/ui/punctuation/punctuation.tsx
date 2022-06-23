@@ -5,7 +5,8 @@ import { ReactNode } from "react";
 export const Punctuation = ({
   text,
   size = "medium",
-  color = "light"
+  color = "light",
+  ...props
 }: {
   text: string | ReactNode;
   size: "big" | "medium" | "small" | undefined;
@@ -20,6 +21,7 @@ export const Punctuation = ({
         justifyContent: "flex-start",
         position: "relative"
       }}
+      {...props}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.25 }}

@@ -4,15 +4,15 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 export default {
   title: "Button",
-  component: ButtonPrimary,
+  component: ButtonPrimary
 } as ComponentMeta<typeof ButtonPrimary>;
 
-const Template: ComponentStory<typeof ButtonPrimary> = (args) => (
+const Template: ComponentStory<typeof ButtonPrimary> = args => (
   <ButtonPrimary {...args} />
 );
 
 export const Primary = Template.bind({});
 
 Primary.args = {
-  children: "Press me",
+  children: "Press me"
 };

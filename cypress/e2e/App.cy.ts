@@ -1,5 +1,7 @@
 // https://on.cypress.io/introduction-to-cypress
 
+/// <reference types="cypress"/>
+
 describe("App (/*)", () => {
   beforeEach(() => {
     cy.visit("/");

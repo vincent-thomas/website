@@ -6,13 +6,9 @@ export const ButtonNotStyled: FC<
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   >
-> = ({ children, className, ...props }) => {
-  const classNames = className
-    ? `${className} ${S["button-not-styled"]}`
-    : S["button-not-styled"];
-
+> = ({ children, className = "", ...props }) => {
   return (
-    <button className={classNames} {...props}>
+    <button className={`${className} ${S["button-not-styled"]}`} {...props}>
       {children}
     </button>
   );

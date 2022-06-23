@@ -5,17 +5,15 @@ import { TitleNormal } from "../../components/title/normal";
 
 export default {
   title: "Underline",
-  component: Underline,
+  component: Underline
 } as ComponentMeta<typeof Underline>;
 
 const Template: ComponentStory<typeof Underline> = ({ children, ...args }) => (
-  <Underline {...args}>
-    <TitleNormal>{children}</TitleNormal>
-  </Underline>
+  <Underline {...args}>{children}</Underline>
 );
 
 export const Primary = Template.bind({});
 
 Primary.args = {
-  children: "Testing",
+  children: "Testing"
 };
