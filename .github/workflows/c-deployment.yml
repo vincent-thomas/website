@@ -1,12 +1,12 @@
 name: Integration/Delivery
 concurrency:
-  group: main-ci/cd
+  group: main-cd
   cancel-in-progress: true
 
 on:
   push:
-    # branches
-    # - main
+    branches:
+      - main
 
 jobs:
   lint:
