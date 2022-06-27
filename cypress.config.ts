@@ -2,14 +2,26 @@ import { defineConfig } from "cypress";
 
 export default defineConfig({
   projectId: "xh4u3x",
-  videosFolder: "cypress/artifacts/media/videos",
-  downloadsFolder: "cypress/artifacts/downloads",
-  screenshotsFolder: "cypress/artifacts/media/screenshots",
+  videosFolder: "artifacts/media/videos",
+  downloadsFolder: "artifacts/downloads",
+  screenshotsFolder: "artifacts/media/screenshots",
   waitForAnimations: true,
+
   e2e: {
-    baseUrl: "http://localhost:3000",
+    specPattern: "e2e/**/*.cy.ts",
     setupNodeEvents(on, config) {
       // implement node event listeners here
+    }
+  },
+
+  fileServerFolder: "out",
+  fixturesFolder: false,
+
+  component: {
+    specPattern: ["core/**/*.cy.tsx"],
+    devServer: {
+      framework: "next",
+      bundler: "webpack"
     }
   }
 });

@@ -5,7 +5,7 @@ import Hero from "@/views/home/hero";
 import { IAm } from "@/views/home/i-am";
 import { ProjectsView } from "@/views/home/projects";
 
-const NewHomePage: NextPage = () => {
+const HomePage: NextPage = () => {
   return (
     <>
       <Head>
@@ -24,4 +24,4 @@ const NewHomePage: NextPage = () => {
   );
 };
 
-export default NewHomePage;
+export default HomePage;

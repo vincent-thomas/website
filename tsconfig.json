@@ -13,13 +13,14 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["cypress"],
     "baseUrl": "./",
+    "types": ["node", "cypress"],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@core/*": ["./core/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "**/*.spec.tsx", "cypress/**"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "cypress.d.ts"],
+  "exclude": ["node_modules", "**/*.spec.tsx", "cypress", "e2e"]
 }

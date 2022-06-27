@@ -4,6 +4,7 @@ specifiers:
   '@babel/core': ^7.17.12
   '@commitlint/cli': ^17.0.0
   '@commitlint/config-conventional': ^17.0.0
+  '@cypress/mount-utils': ^2.0.0
   '@storybook/addon-actions': ^6.5.3
   '@storybook/addon-essentials': ^6.5.3
   '@storybook/addon-interactions': ^6.5.3
@@ -12,6 +13,7 @@ specifiers:
   '@storybook/manager-webpack5': ^6.5.3
   '@storybook/react': ^6.5.3
   '@storybook/testing-library': ^0.0.11
+  '@testing-library/cypress': ^8.0.3
   '@types/aos': ^3.0.4
   '@types/node': 17.0.31
   '@types/react': 18.0.8
@@ -65,6 +67,7 @@ devDependencies:
   '@babel/core': 7.18.0
   '@commitlint/cli': 17.0.0
   '@commitlint/config-conventional': 17.0.0
+  '@cypress/mount-utils': 2.0.0
   '@storybook/addon-actions': 6.5.4_ef5jwxihqo6n7gxfmzogljlgcm
   '@storybook/addon-essentials': 6.5.4_uybtbwqekf6zch3cyec4kw5qfu
   '@storybook/addon-interactions': 6.5.4_2o2qtzwf7dzuc2di3qvhrrb6my
@@ -73,6 +76,7 @@ devDependencies:
   '@storybook/manager-webpack5': 6.5.4_e3msyftxz4gxiy567zkhfuokra
   '@storybook/react': 6.5.4_t6nr5tncwk5pdkpbck7klckvze
   '@storybook/testing-library': 0.0.11_ef5jwxihqo6n7gxfmzogljlgcm
+  '@testing-library/cypress': 8.0.3_cypress@10.2.0
   '@types/aos': 3.0.4
   '@types/node': 17.0.31
   '@types/react': 18.0.8
@@ -1739,6 +1743,10 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
+    dev: true
+
+  /@cypress/mount-utils/2.0.0:
+    resolution: {integrity: sha512-lG7jKlzaKYuuh7NtBY834zZmbmxA5GYsqRJitCb1v5pdhwt0L91tBxmgHh401K26FKXMUzTfighjtwENSglyTQ==}
     dev: true
 
   /@cypress/request/2.88.10:
@@ -3682,6 +3690,17 @@ packages:
       react-dom: 18.1.0_react@18.1.0
       regenerator-runtime: 0.13.9
       resolve-from: 5.0.0
+    dev: true
+
+  /@testing-library/cypress/8.0.3_cypress@10.2.0:
+    resolution: {integrity: sha512-nY2YaSbmuPo5k6kL0iLj/pGPPfka3iwb3kpTx8QN/vOCns92Saz9wfACqB8FJzcR7+lfA4d5HUOWqmTddBzczg==}
+    engines: {node: '>=12', npm: '>=6'}
+    peerDependencies:
+      cypress: ^2.1.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
+    dependencies:
+      '@babel/runtime': 7.18.0
+      '@testing-library/dom': 8.13.0
+      cypress: 10.2.0
     dev: true
 
   /@testing-library/dom/8.13.0:
@@ -9421,7 +9440,7 @@ packages:
       yallist: 4.0.0
 
   /lz-string/1.4.4:
-    resolution: {integrity: sha1-wNjq82BZ9wV5bh40SBHPTEmNOiY=}
+    resolution: {integrity: sha512-0ckx7ZHRPqb0oUm8zNr+90mtf9DQB60H1wMCjBtfi62Kl3a7JbHob6gA2bC+xRvZoOL+1hzUK8jeuEIQE8svEQ==}
     hasBin: true
     dev: true
 
