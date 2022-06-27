@@ -2,7 +2,6 @@ import type { AppProps } from "next/app";
 import "styles/globals.scss";
 import styled from "styled-components";
 import { Banner } from "core/ui";
-import "kursor/dist/kursor.css";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";

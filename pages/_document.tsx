@@ -8,6 +8,10 @@ export default function Document() {
           href='https://fonts.googleapis.com/icon?family=Material+Icons'
           rel='stylesheet'
         />
+        <link
+          href='https://unpkg.com/kursor@0.1.6/dist/kursor.css'
+          rel='stylesheet'
+        />
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script src='https://unpkg.com/kursor' />
       </Head>
