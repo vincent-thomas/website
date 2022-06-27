@@ -19,7 +19,7 @@ import "./commands";
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-import { mount } from "cypress/react";
+import { mount, MountOptions, MountReturn } from "cypress/react";
 
 // Augment the Cypress namespace to include type definitions for
 // your custom command.
@@ -28,7 +28,15 @@ import { mount } from "cypress/react";
 declare global {
   namespace Cypress {
     interface Chainable {
-      mount: typeof mount;
+      /**
+       * Mounts a React node
+       * @param component React Node to mount
+       * @param options Additional options to pass into mount
+       */
+      mount(
+        component: React.ReactNode,
+        options?: MountOptions
+      ): Cypress.Chainable<MountReturn>;
     }
   }
 }
@@ -36,6 +44,3 @@ declare global {
 Cypress.Commands.add("mount", mount);
 
 import "@testing-library/cypress/add-commands";
-
-// Example use:
-// cy.mount(<MyComponent />)

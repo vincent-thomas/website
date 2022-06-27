@@ -4,6 +4,7 @@ specifiers:
   '@babel/core': ^7.17.12
   '@commitlint/cli': ^17.0.0
   '@commitlint/config-conventional': ^17.0.0
+  '@cypress/mount-utils': ^2.0.0
   '@storybook/addon-actions': ^6.5.3
   '@storybook/addon-essentials': ^6.5.3
   '@storybook/addon-interactions': ^6.5.3
@@ -66,6 +67,7 @@ devDependencies:
   '@babel/core': 7.18.0
   '@commitlint/cli': 17.0.0
   '@commitlint/config-conventional': 17.0.0
+  '@cypress/mount-utils': 2.0.0
   '@storybook/addon-actions': 6.5.4_ef5jwxihqo6n7gxfmzogljlgcm
   '@storybook/addon-essentials': 6.5.4_uybtbwqekf6zch3cyec4kw5qfu
   '@storybook/addon-interactions': 6.5.4_2o2qtzwf7dzuc2di3qvhrrb6my
@@ -1741,6 +1743,10 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
+    dev: true
+
+  /@cypress/mount-utils/2.0.0:
+    resolution: {integrity: sha512-lG7jKlzaKYuuh7NtBY834zZmbmxA5GYsqRJitCb1v5pdhwt0L91tBxmgHh401K26FKXMUzTfighjtwENSglyTQ==}
     dev: true
 
   /@cypress/request/2.88.10:

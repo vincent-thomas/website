@@ -37,6 +37,7 @@
     "@babel/core": "^7.17.12",
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
+    "@cypress/mount-utils": "^2.0.0",
     "@storybook/addon-actions": "^6.5.3",
     "@storybook/addon-essentials": "^6.5.3",
     "@storybook/addon-interactions": "^6.5.3",

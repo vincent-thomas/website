@@ -35,5 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 
 .vercel
-cypress/artifacts
+artifacts
 storybook-static

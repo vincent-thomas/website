@@ -1,5 +1,4 @@
 import { ButtonPrimary } from ".";
-
 const TEST_TEXT = "Testing Button";
 
 describe("Button - Primary", () => {
