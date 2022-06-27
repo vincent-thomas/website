@@ -99,6 +99,9 @@ jobs:
     needs: [static_analysis, build_and_upload]
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
+    environment:
+      name: Staging
+      url: ${{steps.deploy_staging.outputs.preview-url}}
     steps:
       - uses: actions/checkout@v2.1.0
       - uses: actions/setup-node@v3
