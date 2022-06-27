@@ -80,34 +80,6 @@ jobs:
           path: out
           if-no-files-found: error
 
-  # deploy_staging:
-  #   runs-on: ubuntu-latest
-  #   name: Deploy Staging
-  #   needs: build
-  #   outputs:
-  #     url: ${{steps.deploy_staging.outputs.preview-url}}
-  #   environment:
-  #     name: Staging
-  #     url: ${{steps.deploy_staging.outputs.preview-url}}
-  #   steps:
-  #     - uses: actions/checkout@v2.1.0
-  #     - name: Setup node
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 16
-  #     - uses: actions/download-artifact@v3
-  #       with:
-  #         name: web-output
-  #         path: out
-  # - uses: amondnet/vercel-action@v20 #deploy
-  #   id: deploy_staging
-  #   with:
-  #     vercel-token: ${{ secrets.VERCEL_SECRET }} # Required
-  #     github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
-  #     vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} #Required
-  #     vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required
-  #     working-directory: out
-
   build_storybook_and_deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -148,8 +120,7 @@ jobs:
   cypress-test:
     runs-on: ubuntu-latest
     name: E2E Testing
-    needs:
-      - deploy_staging
+    needs: [build]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -183,7 +154,6 @@ jobs:
           record: false
           install: false
           config: baseUrl=${{steps.vercel_preview_url.outputs.preview_url}}
-          # start: pnpm preview
   deploy:
     needs:
       - cypress-test
