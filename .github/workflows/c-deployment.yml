@@ -80,33 +80,33 @@ jobs:
           path: out
           if-no-files-found: error
 
-  deploy_staging:
-    runs-on: ubuntu-latest
-    name: Deploy Staging
-    needs: build
-    outputs:
-      url: ${{steps.deploy_staging.outputs.preview-url}}
-    environment:
-      name: Staging
-      url: ${{steps.deploy_staging.outputs.preview-url}}
-    steps:
-      - uses: actions/checkout@v2.1.0
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - uses: actions/download-artifact@v3
-        with:
-          name: web-output
-          path: out
-      - uses: amondnet/vercel-action@v20 #deploy
-        id: deploy_staging
-        with:
-          vercel-token: ${{ secrets.VERCEL_SECRET }} # Required
-          github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} #Required
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required
-          working-directory: out
+  # deploy_staging:
+  #   runs-on: ubuntu-latest
+  #   name: Deploy Staging
+  #   needs: build
+  #   outputs:
+  #     url: ${{steps.deploy_staging.outputs.preview-url}}
+  #   environment:
+  #     name: Staging
+  #     url: ${{steps.deploy_staging.outputs.preview-url}}
+  #   steps:
+  #     - uses: actions/checkout@v2.1.0
+  #     - name: Setup node
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #         name: web-output
+  #         path: out
+  # - uses: amondnet/vercel-action@v20 #deploy
+  #   id: deploy_staging
+  #   with:
+  #     vercel-token: ${{ secrets.VERCEL_SECRET }} # Required
+  #     github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
+  #     vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} #Required
+  #     vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required
+  #     working-directory: out
 
   build_storybook_and_deploy:
     runs-on: ubuntu-latest
@@ -167,16 +167,22 @@ jobs:
 
       - name: Install Deps
         run: pnpm install --frozen-lockfile
-      - uses: actions/download-artifact@v3
+
+      - name: vercel-preview-url
+        uses: zentered/vercel-preview-url@v1.0.0
+        id: vercel_preview_url
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_SECRET }}
         with:
-          name: web-output
-          path: out
+          vercel_team_id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel_project_id: ${{ secrets.VERCEL_PROJECT_ID }}
+
       - name: Cypress run
         uses: cypress-io/github-action@v4.1.0
         with:
           record: false
           install: false
-          config: baseUrl=${{needs.deploy_staging.outputs.url}}
+          config: baseUrl=${{steps.vercel_preview_url.outputs.preview_url}}
           # start: pnpm preview
   deploy:
     needs:
