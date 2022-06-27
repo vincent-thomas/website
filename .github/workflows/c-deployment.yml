@@ -138,21 +138,22 @@ jobs:
       - name: Install Deps
         run: pnpm install --frozen-lockfile
 
-      - name: vercel-preview-url
-        uses: zentered/vercel-preview-url@v1.0.0
-        id: vercel_preview_url
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_SECRET }}
+      - name: Get Vercel Preview URL
+        id: get_url
+        uses: vincent-thomas/fetch-vercel-preview@main
         with:
-          vercel_team_id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel_token: ${{ secrets.VERCEL_SECRET }}
+          vercel_user_id: ${{ secrets.VERCEL_USER_ID }}
           vercel_project_id: ${{ secrets.VERCEL_PROJECT_ID }}
 
+      - name: Echo preview
+        run: echo "Preview url is ready ${{ steps.get_url.outputs.preview_url }}"
       - name: Cypress run
         uses: cypress-io/github-action@v4.1.0
         with:
           record: false
           install: false
-          config: baseUrl=${{steps.vercel_preview_url.outputs.preview_url}}
+          config: baseUrl=${{steps.get_url.outputs.preview_url}}
   deploy:
     needs:
       - cypress-test
