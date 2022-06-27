@@ -1,0 +1,118 @@
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+    branches:
+      - main
+    types:
+      - synchronize
+      - opened
+
+name: Integrate
+
+jobs:
+  check_build_working:
+    name: "Build and Typecheck"
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        action:
+          - build
+          - typecheck
+    steps:
+      - uses: actions/checkout@v2.1.0
+      - uses: pnpm/action-setup@v2.0.1
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "pnpm"
+
+      - name: Install Deps
+        run: pnpm install --frozen-lockfile
+
+      - run: pnpm next-tel-disable
+
+      - name: Build Project
+        run: pnpm ${{ matrix.action }}
+
+  build_and_upload:
+    runs-on: ubuntu-latest
+
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - uses: actions/checkout@v2.1.0
+      - uses: pnpm/action-setup@v2.0.1
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "pnpm"
+
+      - name: Install Deps
+        run: pnpm install --frozen-lockfile
+
+      - run: pnpm next-tel-disable
+
+      - run: pnpm build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: web-output
+          path: out
+          if-no-files-found: error
+
+  static_analysis:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - uses: actions/checkout@v2.1.0
+      - uses: pnpm/action-setup@v2.0.1
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "pnpm"
+
+      - name: Install Deps
+        run: pnpm install --frozen-lockfile
+
+      - run: pnpm next-tel-disable
+
+      - run: pnpm lint
+
+  deploy_preview:
+    needs: [static_analysis, build_and_upload]
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - uses: actions/checkout@v2.1.0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - uses: actions/download-artifact@v3
+        with:
+          name: web-output
+          path: out
+      - uses: amondnet/vercel-action@v20 #deploy
+        id: deploy_staging
+        with:
+          vercel-token: ${{ secrets.VERCEL_SECRET }} # Required
+          github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} #Required
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required
+          working-directory: out

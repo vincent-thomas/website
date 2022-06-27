@@ -51,6 +51,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build Website
+    needs: lint
     steps:
       - uses: actions/checkout@v2.1.0
       - uses: pnpm/action-setup@v2.0.1
