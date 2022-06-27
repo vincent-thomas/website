@@ -143,7 +143,6 @@ jobs:
         uses: vincent-thomas/fetch-vercel-preview@main
         with:
           vercel_token: ${{ secrets.VERCEL_SECRET }}
-          vercel_user_id: ${{ secrets.VERCEL_USER_ID }}
           vercel_project_id: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Echo preview
