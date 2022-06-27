@@ -5,8 +5,8 @@ concurrency:
 
 on:
   push:
-    branches:
-      - main
+    # branches
+    # - main
 
 jobs:
   lint:
@@ -51,7 +51,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build Website
-    needs: lint
     steps:
       - uses: actions/checkout@v2.1.0
       - uses: pnpm/action-setup@v2.0.1
@@ -82,7 +81,7 @@ jobs:
 
   build_storybook_and_deploy:
     runs-on: ubuntu-latest
-    needs: build
+    needs: [lint, build]
     name: Build and deploy Storybook
     environment:
       name: Storybook
@@ -120,7 +119,7 @@ jobs:
   cypress-test:
     runs-on: ubuntu-latest
     name: E2E Testing
-    needs: [build]
+    needs: [build, lint]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
