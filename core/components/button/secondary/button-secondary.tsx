@@ -7,9 +7,9 @@ export const ButtonSecondary: FC<
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   >
-> = ({ children, ...props }) => {
+> = ({ children, className, ...props }) => {
   return (
-    <button className={S["base"]} {...props}>
+    <button className={`${S["base"]} ${className}`} {...props}>
       {children}
     </button>
   );

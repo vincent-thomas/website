@@ -8,10 +8,12 @@ export const ButtonPrimary: FC<
     HTMLButtonElement
   >
 > = ({ children, ...props }) => {
+  let classNames = props.className;
+  delete props.className;
   return (
-    <button className={`${S["base"]}`} {...props}>
+    <button className={`${S["base"]} ${classNames || ""}`} {...props}>
       {children}
-      <span className={S['decorate']}></span>
+      <span className={S["decorate"]}></span>
     </button>
   );
 };

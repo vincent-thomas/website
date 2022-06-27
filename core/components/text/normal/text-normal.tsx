@@ -5,9 +5,9 @@ export const TextNormal: FC<
     HTMLAttributes<HTMLSpanElement>,
     HTMLSpanElement
   >
-> = ({ children, restrictWidth, ...props }) => (
+> = ({ children, restrictWidth, className, ...props }) => (
   <span
-    className={S["text"]}
+    className={`${S["text"]} ${className}`}
     {...props}
     style={restrictWidth ? { maxWidth: "50ch" } : {}}
   >

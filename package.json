@@ -13,9 +13,8 @@
     "lint": "next lint",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
-    "test:unit": "exit 0",
-    "test:integration": "cypress run --component",
-    "test:e2e": "cypress run",
+    "test:component": "cypress run --component --quiet --record false",
+    "test:e2e": "cypress run --quiet --record false",
     "next": "next",
     "next-tel-disable": "next telemetry disable"
   },

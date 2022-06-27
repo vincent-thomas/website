@@ -16,6 +16,7 @@ const nextConfig = {
   swcMinify: true,
   poweredByHeader: false,
   optimizeFonts: true,
+
   images: {
     domains: ["assets.v-thomas.me"]
   },

@@ -1,13 +1,13 @@
-import { ButtonSecondary } from ".";
+import { ButtonNotStyled } from ".";
 
 const TEST_TEXT = "Testing Button";
 
-describe("Button - Secondary", () => {
+describe("Button - Not Styled", () => {
   it("Should Display", () => {
     cy.mount(
-      <ButtonSecondary data-test='button' data-testing-props>
+      <ButtonNotStyled data-test='button' data-testing-props>
         {TEST_TEXT}
-      </ButtonSecondary>
+      </ButtonNotStyled>
     );
     const BUTTON = cy.get("[data-test='button']");
     BUTTON.should("contain.text", TEST_TEXT);
@@ -16,9 +16,9 @@ describe("Button - Secondary", () => {
   });
   it("Should pass down props", () => {
     cy.mount(
-      <ButtonSecondary data-test='button' data-testing-props>
+      <ButtonNotStyled data-test='button' data-testing-props>
         {TEST_TEXT}
-      </ButtonSecondary>
+      </ButtonNotStyled>
     );
     const BUTTON = cy.get("[data-testing-props]");
     BUTTON.should("be.visible");
@@ -28,29 +28,15 @@ describe("Button - Secondary", () => {
     BUTTON2.should("be.visible");
     BUTTON2.should("not.be.hidden");
   });
-  it("Should have same styling with className passed down", () => {
-    cy.mount(
-      <ButtonSecondary
-        data-test='button'
-        data-testing-props
-        className={"testing"}
-      >
-        {TEST_TEXT}
-      </ButtonSecondary>
-    );
-    const BUTTON = cy.get("button");
-    BUTTON.should("have.class", "testing");
-    BUTTON.should("not.have.css", "background-color", "rgb(239, 239, 239)");
-  });
   it("Should pass down props with className", () => {
     cy.mount(
-      <ButtonSecondary
+      <ButtonNotStyled
         data-test='button'
         data-testing-props
         className={"testing"}
       >
         {TEST_TEXT}
-      </ButtonSecondary>
+      </ButtonNotStyled>
     );
     let BUTTON = cy.get("[data-test='button']");
     BUTTON.should("contain.text", TEST_TEXT);
@@ -63,5 +49,19 @@ describe("Button - Secondary", () => {
     const BUTTON2 = cy.get(".testing");
     BUTTON2.should("be.visible");
     BUTTON2.should("not.be.undefined");
+  });
+  it("Should have same styling with className passed down", () => {
+    cy.mount(
+      <ButtonNotStyled
+        data-test='button'
+        data-testing-props
+        className={"testing"}
+      >
+        {TEST_TEXT}
+      </ButtonNotStyled>
+    );
+    const BUTTON = cy.get("button");
+    BUTTON.should("have.class", "testing");
+    BUTTON.should("not.have.css", "background-color", "rgb(239, 239, 239)");
   });
 });
