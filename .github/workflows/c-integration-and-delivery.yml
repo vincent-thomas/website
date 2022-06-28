@@ -13,11 +13,12 @@ on:
 
 jobs:
   check_build_working:
-    name: "Build and Typecheck"
+    name: Transpile Code
     if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.1.0
+      - name: Checkout
+        uses: actions/checkout@v2.1.0
 
       - uses: pnpm/action-setup@v2.0.1
         name: Install pnpm
@@ -26,7 +27,8 @@ jobs:
           version: 7
           run_install: false
 
-      - uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: "pnpm"
@@ -34,15 +36,19 @@ jobs:
       - name: Install Deps
         run: pnpm install --frozen-lockfile
 
-      - run: pnpm next-tel-disable
+      - name: Disable Telemetry
+        run: pnpm next-tel-disable
 
       - name: Build Project
         run: pnpm build
-  static_analysis:
+
+  Checking_code_and_deploy_preview:
+    name: Pull Request Guard
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
     steps:
-      - uses: actions/checkout@v2.1.0
+      - name: Checkout Code
+        uses: actions/checkout@v2.1.0
 
       - uses: pnpm/action-setup@v2.0.1
         name: Install pnpm
@@ -51,7 +57,8 @@ jobs:
           version: 7
           run_install: false
 
-      - uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: "pnpm"
@@ -59,73 +66,24 @@ jobs:
       - name: Install Deps
         run: pnpm install --frozen-lockfile
 
-      - run: pnpm next-tel-disable
+      - name: Disable telemetry
+        run: pnpm next-tel-disable
 
-      - run: pnpm lint
+      - name: Static code analysis
+        run: pnpm lint
 
-  test:
-    runs-on: ubuntu-latest
-    name: Component Testing
-    if: ${{ github.event_name == 'pull_request' }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Transpile Code
+        run: pnpm build
 
-      - uses: pnpm/action-setup@v2.0.1
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          version: 7
-          run_install: false
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: "pnpm"
-
-      - name: Install Deps
-        run: pnpm install --frozen-lockfile
-
-      - name: Cypress run
+      - name: Component Test
         uses: cypress-io/github-action@v4.1.0
         with:
           record: false
           install: false
           component: true
 
-  build_and_deploy:
-    runs-on: ubuntu-latest
-    needs:
-      - test
-      - static_analysis
-    if: ${{ github.event_name == 'pull_request' }}
-    environment:
-      name: Staging
-      url: ${{steps.deploy_staging.outputs.preview-url}}
-    steps:
-      - uses: actions/checkout@v2.1.0
-
-      - uses: pnpm/action-setup@v2.0.1
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          version: 7
-          run_install: false
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: "pnpm"
-
-      - name: Install Deps
-        run: pnpm install --frozen-lockfile
-
-      - run: pnpm next-tel-disable
-
-      - run: pnpm build
-
       - uses: amondnet/vercel-action@v20 #deploy
-        id: deploy_staging
+        name: Deploy Staging
         with:
           vercel-token: ${{ secrets.VERCEL_SECRET }} # Required
           github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
