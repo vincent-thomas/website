@@ -24,7 +24,7 @@ specifiers:
   babel-loader: ^8.2.5
   critters: ^0.0.16
   css-loader: ^6.7.1
-  cypress: ^10.2.0
+  cypress: 10.3.0
   cz-git: ^1.3.1
   eslint: 8.14.0
   eslint-config-next: 12.1.6
@@ -71,7 +71,7 @@ devDependencies:
   '@storybook/manager-webpack5': 6.5.4_e3msyftxz4gxiy567zkhfuokra
   '@storybook/react': 6.5.4_t6nr5tncwk5pdkpbck7klckvze
   '@storybook/testing-library': 0.0.11_ef5jwxihqo6n7gxfmzogljlgcm
-  '@testing-library/cypress': 8.0.3_cypress@10.2.0
+  '@testing-library/cypress': 8.0.3_cypress@10.3.0
   '@types/aos': 3.0.4
   '@types/node': 17.0.31
   '@types/react': 18.0.8
@@ -80,7 +80,7 @@ devDependencies:
   '@types/styled-components': 5.1.25
   babel-loader: 8.2.5_qqaml4ljchhh37dxp4aoesgrby
   css-loader: 6.7.1_webpack@5.72.1
-  cypress: 10.2.0
+  cypress: 10.3.0
   cz-git: 1.3.2
   eslint: 8.14.0
   eslint-config-next: 12.1.6_27u4zztysjhw3gcwzw7kecgb4y
@@ -3688,7 +3688,7 @@ packages:
       resolve-from: 5.0.0
     dev: true
 
-  /@testing-library/cypress/8.0.3_cypress@10.2.0:
+  /@testing-library/cypress/8.0.3_cypress@10.3.0:
     resolution: {integrity: sha512-nY2YaSbmuPo5k6kL0iLj/pGPPfka3iwb3kpTx8QN/vOCns92Saz9wfACqB8FJzcR7+lfA4d5HUOWqmTddBzczg==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -3696,7 +3696,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.0
       '@testing-library/dom': 8.13.0
-      cypress: 10.2.0
+      cypress: 10.3.0
     dev: true
 
   /@testing-library/dom/8.13.0:
@@ -6157,8 +6157,8 @@ packages:
     resolution: {integrity: sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=}
     dev: true
 
-  /cypress/10.2.0:
-    resolution: {integrity: sha512-+i9lY5ENlfi2mJwsggzR+XASOIgMd7S/Gd3/13NCpv596n3YSplMAueBTIxNLcxDpTcIksp+9pM3UaDrJDpFqA==}
+  /cypress/10.3.0:
+    resolution: {integrity: sha512-txkQWKzvBVnWdCuKs5Xc08gjpO89W2Dom2wpZgT9zWZT5jXxqPIxqP/NC1YArtkpmp3fN5HW8aDjYBizHLUFvg==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     requiresBuild: true
@@ -11014,7 +11014,7 @@ packages:
     dev: true
 
   /proxy-from-env/1.0.0:
-    resolution: {integrity: sha1-M8UDmPcOp+uW0h97gXYwpVeRx+4=}
+    resolution: {integrity: sha512-F2JHgJQ1iqwnHDcQjVBsq3n/uoaFL+iPW/eAeL7kVxy/2RrWaN4WroKjjvbsoRtv0ftelNyC01bjRhn/bhcf4A==}
     dev: true
 
   /prr/1.0.1:

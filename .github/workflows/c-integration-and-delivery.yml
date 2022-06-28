@@ -76,7 +76,7 @@ jobs:
         run: pnpm build
 
       - name: Install Cypress
-        run: pnpm dlx cypress install --force
+        run: node_modules/.bin/cypress install --force
 
       - name: Component Test
         run: pnpm test:component
