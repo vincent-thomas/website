@@ -1,7 +1,7 @@
 import { Underline } from "./underline";
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { TitleNormal } from "../../components/title/normal";
+import { Title } from "../../components/title";
 
 export default {
   title: "Underline",
@@ -9,7 +9,9 @@ export default {
 } as ComponentMeta<typeof Underline>;
 
 const Template: ComponentStory<typeof Underline> = ({ children, ...args }) => (
-  <Underline {...args}>{children}</Underline>
+  <Underline {...args}>
+    <Title>{children}</Title>
+  </Underline>
 );
 
 export const Primary = Template.bind({});

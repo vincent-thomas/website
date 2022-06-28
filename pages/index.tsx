@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import ColorLines from "@/views/home/color-lines";
 import Hero from "@/views/home/hero";
-import { IAm } from "@/views/home/i-am";
+import { AboutMe } from "@/views/home/about";
 import { ProjectsView } from "@/views/home/projects";
 
 const HomePage: NextPage = () => {
@@ -17,7 +17,7 @@ const HomePage: NextPage = () => {
       </Head>
       <Hero />
       <ColorLines />
-      <IAm />
+      <AboutMe />
       <ColorLines />
       <ProjectsView />
     </>

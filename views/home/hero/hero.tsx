@@ -1,47 +1,41 @@
-import {
-  ButtonPrimary,
-  ButtonSecondary,
-  LinkNotStyled,
-  TitleInfo,
-  TitleNormal
-} from "core/components";
+import { MaxWidthLayout } from "@/core/layouts/max-width/max-width.layout";
+import { Button, LinkNotStyled, Title } from "core/components";
 import { Underline } from "core/ui/underline";
 import { Banner } from "./components/banner";
 import { Image as MyImg } from "./components/image";
-import { Wrapper } from "./components/wrapper";
 import S from "./hero.module.scss";
 
 const Hero = () => {
   return (
     <>
-      <Wrapper>
+      <MaxWidthLayout>
         <div className={S["content"]}>
           <div className={S["left-container"]}>
-            <TitleInfo data-test='hero-title-header'>Hi!</TitleInfo>
-            <TitleNormal
-              size='big'
-              className={S["title"]}
-              data-test='hero-title'
-            >
+            <Title data-test='hero-title-header' size='info'>
+              Hi!
+            </Title>
+            <Title size='large' className={S["title"]} data-test='hero-title'>
               I&rsquo;m <Underline>Vincent Thomas</Underline> , You found me. I
               turn food and hard work into websites.
-            </TitleNormal>
+            </Title>
             <div className={S["button-container"]}>
               <LinkNotStyled href='mailto:vincent.nathan.thomas@gmail.com'>
-                <ButtonPrimary data-test='button-contact'>
+                <Button data-test='button-contact' version='primary'>
                   Contact Me
-                </ButtonPrimary>
+                </Button>
               </LinkNotStyled>
-              <ButtonSecondary data-test='button-about'>
-                About Me
-              </ButtonSecondary>
+              <LinkNotStyled href='#about'>
+                <Button data-test='button-about' version='secondary'>
+                  About Me
+                </Button>
+              </LinkNotStyled>
             </div>
           </div>
           <div className={S["image-wrapper"]}>
             <MyImg data-test='image-me' />
           </div>
         </div>
-      </Wrapper>
+      </MaxWidthLayout>
       <Banner />
     </>
   );

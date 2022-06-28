@@ -1,0 +1,7 @@
+@import "styles/constants";
+
+.wrapper {
+  max-width: $max-width;
+  padding: calc(var(--space) * 1.5) var(--space);
+  margin-inline: auto;
+}

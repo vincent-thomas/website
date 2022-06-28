@@ -1,5 +1,14 @@
-import { ButtonPrimary } from "core/components";
+import { Button } from "core/components";
 
-export const LearnMoreButton = ({ onClick }: { onClick: () => void }) => {
-  return <ButtonPrimary onClick={onClick}>Learn more</ButtonPrimary>;
+export const LearnMoreButton = ({
+  onClick,
+  ...props
+}: {
+  onClick: () => void;
+}) => {
+  return (
+    <Button onClick={onClick} {...props} version='primary'>
+      Learn more
+    </Button>
+  );
 };
