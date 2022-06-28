@@ -75,11 +75,14 @@ jobs:
       - name: Transpile Code
         run: pnpm build
 
+      - name: Install Cypress
+        run: pnpm dlx cypress install --force
+
       - name: Component Test
         uses: cypress-io/github-action@v4.1.0
         with:
           record: false
-          install-command: pnpm install --frozen-lockfile
+          install: false
           component: true
 
       - uses: amondnet/vercel-action@v20 #deploy
