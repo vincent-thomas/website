@@ -1,4 +1,4 @@
-import { ButtonPrimary } from "core/components";
+import { Button } from "core/components";
 
 export const LearnMoreButton = ({
   onClick,
@@ -7,8 +7,8 @@ export const LearnMoreButton = ({
   onClick: () => void;
 }) => {
   return (
-    <ButtonPrimary onClick={onClick} {...props}>
+    <Button onClick={onClick} {...props} version='primary'>
       Learn more
-    </ButtonPrimary>
+    </Button>
   );
 };

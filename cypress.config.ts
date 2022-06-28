@@ -6,15 +6,16 @@ export default defineConfig({
   downloadsFolder: "artifacts/downloads",
   screenshotsFolder: "artifacts/media/screenshots",
   waitForAnimations: true,
-
   e2e: {
-    specPattern: "e2e/**/*.cy.ts",
+    specPattern: "cypress/e2e/**/*.cy.ts",
     setupNodeEvents(on, config) {
       // implement node event listeners here
-    }
+    },
+    baseUrl: "http://localhost:3000"
   },
 
-  fileServerFolder: "out",
+  // fileServerFolder: "out",
+
   fixturesFolder: false,
 
   component: {

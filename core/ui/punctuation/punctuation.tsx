@@ -1,16 +1,18 @@
 import { motion } from "framer-motion";
-import { TitleNormal } from "@/core/components";
+import { Title } from "@/core/components";
 import { ReactNode } from "react";
 
 export const Punctuation = ({
   text,
   size = "medium",
   color = "light",
+  withTitle = true,
   ...props
 }: {
   text: string | ReactNode;
-  size: "big" | "medium" | "small" | undefined;
+  size: "large" | "medium" | "small" | undefined;
   color?: "light" | "dark";
+  withTitle?: boolean;
 }) => {
   return (
     <motion.div
@@ -43,9 +45,13 @@ export const Punctuation = ({
         animate={{ left: 0 }}
         transition={{ delay: 0.5, duration: 0.25 }}
       >
-        <TitleNormal style={{ position: "relative" }} size={size} color={color}>
-          {text}
-        </TitleNormal>
+        {withTitle ? (
+          <Title style={{ position: "relative" }} size={size} color={color}>
+            {text}
+          </Title>
+        ) : (
+          text
+        )}
       </motion.div>
     </motion.div>
   );

@@ -47,10 +47,38 @@ jobs:
       - name: Lint Project
         run: pnpm lint
         working-directory: .
+  test:
+    runs-on: ubuntu-latest
+    name: Component Testing
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
+      - uses: pnpm/action-setup@v2.0.1
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "pnpm"
+
+      - name: Install Deps
+        run: pnpm install --frozen-lockfile
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v4.1.0
+        with:
+          record: false
+          install: false
+          component: true
   build:
     runs-on: ubuntu-latest
     name: Build Website
+    needs: [lint, test]
     steps:
       - uses: actions/checkout@v2.1.0
       - uses: pnpm/action-setup@v2.0.1

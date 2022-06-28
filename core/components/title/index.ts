@@ -1,2 +1,1 @@
-export * from "./normal";
-export * from "./info";
+export * from "./title";

@@ -16,12 +16,6 @@ jobs:
     name: "Build and Typecheck"
     if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true
-      matrix:
-        action:
-          - build
-          - typecheck
     steps:
       - uses: actions/checkout@v2.1.0
 
@@ -43,7 +37,7 @@ jobs:
       - run: pnpm next-tel-disable
 
       - name: Build Project
-        run: pnpm ${{ matrix.action }}
+        run: pnpm build
   static_analysis:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
@@ -71,6 +65,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    name: Component Testing
     if: ${{ github.event_name == 'pull_request' }}
     steps:
       - name: Checkout

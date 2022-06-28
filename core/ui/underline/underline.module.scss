@@ -30,4 +30,10 @@
   z-index: 9;
   transition: color 0.25s ease-in;
   position: relative;
+
+  &:hover .title-underline {
+    height: 0.5rem;
+    bottom: 0;
+    transition: height 0.2s ease;
+  }
 }
