@@ -79,7 +79,7 @@ jobs:
         uses: cypress-io/github-action@v4.1.0
         with:
           record: false
-          install: false
+          install-command: pnpm install --frozen-lockfile
           component: true
 
       - uses: amondnet/vercel-action@v20 #deploy
