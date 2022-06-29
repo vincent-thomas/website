@@ -1,12 +1,12 @@
-import { HoverBackground } from "core/ui/hover-background/hover-background";
+import { HoverBackground } from "@core/ui";
 import { FC } from "react";
-import { Button } from "@/core/components/button";
+import { Link } from "@core/components";
 
 export const SocialTwitterIcon: FC<{ type: "white" | "black" }> = ({
   type
 }) => {
   return (
-    <Button onClick={() => window.open("https://twitter.com/Vincent05672456")}>
+    <Link to='https://twitter.com/Vincent05672456' type='not-styled'>
       <HoverBackground
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -14,11 +14,23 @@ export const SocialTwitterIcon: FC<{ type: "white" | "black" }> = ({
         style={{ display: "grid", placeItems: "center" }}
       >
         {type === "white" ? (
-          <img src='/twitter_logo.svg' alt='' width='30' height='30' />
+          <img
+            src='/twitter_logo.svg'
+            alt=''
+            width='30'
+            height='30'
+            className='no-shadow'
+          />
         ) : (
-          <img src='/twitter-black_logo.svg' alt='' width='30' height='30' />
+          <img
+            src='/twitter-black_logo.svg'
+            alt=''
+            width='30'
+            height='30'
+            className='no-shadow'
+          />
         )}
       </HoverBackground>
-    </Button>
+    </Link>
   );
 };

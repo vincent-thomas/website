@@ -1,4 +1,4 @@
-import { LinkNotStyled } from "core/components/link/not-styled";
+import { Link } from "core/components/link";
 import { FC, ReactNode } from "react";
 import S from "./banner.module.scss";
 
@@ -8,14 +8,14 @@ export const Banner: FC<{ children: ReactNode; link?: string }> = ({
   ...props
 }) => {
   return (
-    <LinkNotStyled
+    <Link
       className={S["container"]}
-      href={link ? link : "#"}
-      target={link ? "_blank" : "_self"}
-      rel='noreferrer'
+      to={link || "#"}
+      type='not-styled'
+      external={!!link}
       {...props}
     >
       <span className={S["content"]}>{children}</span>
-    </LinkNotStyled>
+    </Link>
   );
 };

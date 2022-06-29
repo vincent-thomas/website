@@ -18,9 +18,9 @@ const Template: ComponentStory<typeof Btn> = args => (
     }}
   >
     <div style={{ display: "flex", gap: "3rem", alignItems: "center" }}>
-      <Btn version='primary'>{args.children}</Btn>
-      <Btn version='secondary'>{args.children}</Btn>
-      <Btn version='not-styled'>{args.children}</Btn>
+      <Btn type='primary'>{args.children}</Btn>
+      <Btn type='secondary'>{args.children}</Btn>
+      <Btn type='not-styled'>{args.children}</Btn>
     </div>
     <Title size='info'>Active:</Title>
     <Btn {...args} />
@@ -31,5 +31,5 @@ export const Button = Template.bind({});
 
 Button.args = {
   children: "Press me",
-  version: undefined
+  type: undefined
 };

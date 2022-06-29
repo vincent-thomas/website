@@ -1,5 +1,5 @@
-import { Title } from "@/core/components";
-import { Punctuation } from "@/core/ui/punctuation";
+import { Title } from "@core/components";
+import { Punctuation } from "@core/ui";
 import S from "./projects.module.scss";
 
 export const ProjectsView = () => {

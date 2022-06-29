@@ -1,16 +1,11 @@
 import type { AppProps } from "next/app";
-import "styles/globals.scss";
-import styled from "styled-components";
-import { Banner } from "core/ui";
+import "../styles/globals.scss";
+import { Banner } from "../core/ui";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const Core = styled.div`
-  background-color: var(--clr-light-background);
-`;
-
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     Aos.init({
       offset: 450,
@@ -25,12 +20,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         Checkout PureForms, a developer-friendly alternative to Typeform. Sign
         up for the waitlist today!
       </Banner>
-
-      <Core>
-        <Component {...pageProps} />
-      </Core>
+      <Component {...pageProps} />
     </>
   );
 }
 
-export default MyApp;
+export default App;

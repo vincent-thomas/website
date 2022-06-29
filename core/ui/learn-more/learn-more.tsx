@@ -7,7 +7,7 @@ export const LearnMoreButton = ({
   onClick: () => void;
 }) => {
   return (
-    <Button onClick={onClick} {...props} version='primary'>
+    <Button onClick={onClick} {...props} type='primary'>
       Learn more
     </Button>
   );

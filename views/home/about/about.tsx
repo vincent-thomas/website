@@ -1,7 +1,6 @@
-import { LinkNotStyled, Title } from "@/core/components";
-import { MaxWidthLayout } from "@/core/layouts/max-width/max-width.layout";
-import { Punctuation } from "@/core/ui/punctuation";
-import { Texting } from "@/core/ui/texting";
+import { Link, Text, Title } from "@core/components";
+import { MaxWidthLayout } from "@core/layouts";
+import { Punctuation, Texting } from "@core/ui";
 import { IAmC } from "./components/i-am/i-am";
 import S from "./about.module.scss";
 
@@ -24,11 +23,11 @@ export const AboutMe = () => {
         >
           <Punctuation
             text={
-              <LinkNotStyled href='#about'>
+              <Link to='#about' type='not-styled'>
                 <Texting>
                   <Title size='large'>About me</Title>
                 </Texting>
-              </LinkNotStyled>
+              </Link>
             }
             size='large'
             withTitle
@@ -42,7 +41,12 @@ export const AboutMe = () => {
             id='intrests'
             data-test='about-me-intrests'
           >
-            <img src='/feva.svg' alt='' width='300' height='300' />
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+            >
+              <img src='/feva.svg' alt='' width='300' height='300' />
+              <Text>(Not me tho...)</Text>
+            </div>
             <div className={S["revert"]}>
               <Title size='info'>I like to...</Title>
               <Title
@@ -51,7 +55,7 @@ export const AboutMe = () => {
               >
                 Code, fiddle with config files, hangout with friends and sail a
                 boat called feva.
-                <img src='/sail-arrow.svg' alt='' />
+                <img src='/sail-arrow.svg' alt='' className='no-shadow' />
               </Title>
             </div>
           </div>

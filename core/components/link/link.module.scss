@@ -1,7 +1,7 @@
 @import "styles/_colors.scss";
 
-.link-normal {
+a.link[data-type="not-styled"] {
   color: $clr-txt;
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
 }

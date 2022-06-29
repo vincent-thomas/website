@@ -1,11 +1,11 @@
-import { MaxWidthLayout } from "@/core/layouts/max-width/max-width.layout";
-import { Button, LinkNotStyled, Title } from "core/components";
-import { Underline } from "core/ui/underline";
+import { MaxWidthLayout } from "@core/layouts";
+import { Button, Link, Title } from "@core/components";
+import { Underline } from "@core/ui";
 import { Banner } from "./components/banner";
 import { Image as MyImg } from "./components/image";
 import S from "./hero.module.scss";
 
-const Hero = () => {
+export const Hero = () => {
   return (
     <>
       <MaxWidthLayout>
@@ -19,16 +19,19 @@ const Hero = () => {
               turn food and hard work into websites.
             </Title>
             <div className={S["button-container"]}>
-              <LinkNotStyled href='mailto:vincent.nathan.thomas@gmail.com'>
-                <Button data-test='button-contact' version='primary'>
+              <Link
+                type='not-styled'
+                to='mailto:vincent.nathan.thomas@gmail.com'
+              >
+                <Button data-test='button-contact' type='primary'>
                   Contact Me
                 </Button>
-              </LinkNotStyled>
-              <LinkNotStyled href='#about'>
-                <Button data-test='button-about' version='secondary'>
+              </Link>
+              <Link type='not-styled' to='#about'>
+                <Button data-test='button-about' type='secondary'>
                   About Me
                 </Button>
-              </LinkNotStyled>
+              </Link>
             </div>
           </div>
           <div className={S["image-wrapper"]}>
@@ -40,5 +43,3 @@ const Hero = () => {
     </>
   );
 };
-
-export default Hero;

@@ -5,7 +5,7 @@ const TEST_TEXT = "Testing Button";
 describe("Button - Secondary", () => {
   it("Should Display", () => {
     cy.mount(
-      <Button version='secondary' data-test='button' data-testing-props>
+      <Button type='secondary' data-test='button' data-testing-props>
         {TEST_TEXT}
       </Button>
     );
@@ -16,7 +16,7 @@ describe("Button - Secondary", () => {
   });
   it("Should pass down props", () => {
     cy.mount(
-      <Button version='secondary' data-test='button' data-testing-props>
+      <Button type='secondary' data-test='button' data-testing-props>
         {TEST_TEXT}
       </Button>
     );
@@ -31,7 +31,7 @@ describe("Button - Secondary", () => {
   it("Should have same styling with className passed down", () => {
     cy.mount(
       <Button
-        version='secondary'
+        type='secondary'
         data-test='button'
         data-testing-props
         className={"testing"}
@@ -39,14 +39,14 @@ describe("Button - Secondary", () => {
         {TEST_TEXT}
       </Button>
     );
-    const BUTTON = cy.get("button");
+    const BUTTON = cy.get("[data-test='button']");
     BUTTON.should("have.class", "testing");
     BUTTON.should("not.have.css", "background-color", "rgb(239, 239, 239)");
   });
   it("Should pass down props with className", () => {
     cy.mount(
       <Button
-        version='secondary'
+        type='secondary'
         data-test='button'
         data-testing-props
         className={"testing"}

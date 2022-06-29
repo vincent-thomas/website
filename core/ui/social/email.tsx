@@ -1,6 +1,6 @@
 import { HoverBackground } from "core/ui/hover-background/hover-background";
 import { motion } from "framer-motion";
-import { LinkNotStyled } from "core/components/link/not-styled";
+import { Link } from "core/components/link";
 export const SocialEmailIcon = () => {
   return (
     <motion.div
@@ -9,7 +9,7 @@ export const SocialEmailIcon = () => {
       transition={{ delay: 0.75, duration: 0.25 }}
       style={{ display: "grid", placeItems: "center" }}
     >
-      <LinkNotStyled href='mailto:vincent.nathan.thomas@gmail.com'>
+      <Link type='not-styled' to='mailto:vincent.nathan.thomas@gmail.com'>
         <HoverBackground style={{ display: "grid", placeItems: "center" }}>
           <img
             width='30'
@@ -18,7 +18,7 @@ export const SocialEmailIcon = () => {
             alt=''
           />
         </HoverBackground>
-      </LinkNotStyled>
+      </Link>
     </motion.div>
   );
 };

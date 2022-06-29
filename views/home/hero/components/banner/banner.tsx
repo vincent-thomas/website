@@ -1,6 +1,5 @@
-import { LinkNormal } from "@/core/components";
-import { SocialGithubIcon, SocialTwitterIcon } from "@/core/ui";
-import { HoverBackground } from "@/core/ui/hover-background/hover-background";
+import { Link } from "@core/components";
+import { SocialGithubIcon, SocialTwitterIcon, HoverBackground } from "@core/ui";
 import { SHORTS } from "core/utils";
 import S from "./banner.module.scss";
 
@@ -9,18 +8,18 @@ export const Banner = () => {
     <div className={S["wrapper"]} data-test='social-bar'>
       <div className={S["container"]}>
         <div className={S["left"]}>
-          <LinkNormal href='#who-iam'>
+          <Link to='#who-iam' type='not-styled'>
             <HoverBackground>Who I Am</HoverBackground>
-          </LinkNormal>
-          <LinkNormal href='#intrests'>
+          </Link>
+          <Link to='#intrests' type='not-styled'>
             <HoverBackground>Interests</HoverBackground>
-          </LinkNormal>
-          <LinkNormal href='#'>
+          </Link>
+          <Link to='#' type='not-styled'>
             <HoverBackground>Projects</HoverBackground>
-          </LinkNormal>
-          <LinkNormal href={SHORTS.EMAIL_ME_LINK}>
+          </Link>
+          <Link to={SHORTS.EMAIL_ME_LINK} type='not-styled'>
             <HoverBackground>Email</HoverBackground>
-          </LinkNormal>
+          </Link>
         </div>
         <div className={S["left"]}>
           <SocialTwitterIcon type='black' />

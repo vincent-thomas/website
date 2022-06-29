@@ -1,5 +1,7 @@
-import { Title } from "@/core/components";
+import { Title } from "@core/components";
 import Shared from "../../about.module.scss";
+
+import S from "./i-am.module.scss";
 
 export const IAmC = () => {
   return (
@@ -18,6 +20,7 @@ export const IAmC = () => {
         >
           <img
             src='/text-underline.svg'
+            className={`${S["angle-to-right"]} no-shadow`}
             style={{
               position: "absolute",
               bottom: "-1.4rem",

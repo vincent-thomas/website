@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from "react";
-import S from "./text-normal.module.scss";
-export const TextNormal: FC<
+import S from "./text.module.scss";
+export const Text: FC<
   { children: ReactNode; restrictWidth?: boolean } & DetailedHTMLProps<
     HTMLAttributes<HTMLSpanElement>,
     HTMLSpanElement
@@ -8,8 +8,8 @@ export const TextNormal: FC<
 > = ({ children, restrictWidth, className, ...props }) => (
   <span
     className={`${S["text"]} ${className}`}
-    {...props}
     style={restrictWidth ? { maxWidth: "50ch" } : {}}
+    {...props}
   >
     {children}
   </span>

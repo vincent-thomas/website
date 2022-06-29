@@ -13,7 +13,6 @@ const config = {
 
   cleanDistDir: true,
   compress: true,
-  swcMinify: true,
   poweredByHeader: false,
   optimizeFonts: true,
 
@@ -22,9 +21,6 @@ const config = {
   },
   trailingSlash: false,
   productionBrowserSourceMaps: true,
-  typescript: {
-    tsconfigPath: "./tsconfig.json"
-  },
 
   basePath: "",
   useFileSystemPublicRoutes: true

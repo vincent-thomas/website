@@ -13,11 +13,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "./",
     "types": ["node", "cypress"],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "@core/*": ["./core/*"]
+      "@core/*": ["core/*"],
+      "@views/*": ["views/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"]
   },

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import S from "./color-lines.module.scss";
 
-const ColorLines: FC<{ flip?: boolean }> = ({ flip = false }) => {
+export const ColorLines: FC<{ flip?: boolean }> = ({ flip = false }) => {
   return (
     <div className={S["wrapper"]} data-test='color-lines'>
       <div className={`${S["container"]} ${flip && S["flip"]}`}>
@@ -12,4 +12,3 @@ const ColorLines: FC<{ flip?: boolean }> = ({ flip = false }) => {
     </div>
   );
 };
-export default ColorLines;

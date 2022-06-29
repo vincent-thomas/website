@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,700&display=swap");
+@import "./colors";
 
 *,
 *::before,
@@ -18,6 +19,7 @@
 body {
   max-width: 100%;
   overflow-x: hidden;
+  background-color: $clr-bg-light;
 }
 
 a,
@@ -65,4 +67,8 @@ button {
   :root {
     --sc-space: 1rem;
   }
+}
+
+img:not(.no-shadow) {
+  box-shadow: 10px 10px 2rem rgba(31, 31, 38, 0.2);
 }
