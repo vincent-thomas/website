@@ -1,4 +1,4 @@
-import { Title } from ".";
+import { Title } from "..";
 const TEXT = "This is the test text";
 
 describe("Title", () => {
@@ -10,6 +10,11 @@ describe("Title", () => {
     text.should("be.visible");
     text.should("not.be.undefined");
     text.should("not.be.null");
+  });
+  it("Should have 'medium' as default", () => {
+    cy.mount(<Title data-test>{TEXT}</Title>);
+    const title = cy.get("h2[data-test]");
+    title.should("be.visible");
   });
   it("Should have correct css", () => {
     cy.mount(<Title data-test>{TEXT}</Title>);

@@ -1,8 +1,7 @@
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 
 import { TButton } from "./button.types";
 import S from "./button.module.scss";
-
 type ButtonProps = {
   children: ReactNode;
   type: "not-styled" | "primary" | "secondary";

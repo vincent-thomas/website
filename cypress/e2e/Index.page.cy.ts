@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe("Index Page (/)", () => {
   beforeEach(() => {
     cy.visit("/");

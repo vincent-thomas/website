@@ -7,12 +7,7 @@ export const SocialTwitterIcon: FC<{ type: "white" | "black" }> = ({
 }) => {
   return (
     <Link to='https://twitter.com/Vincent05672456' type='not-styled'>
-      <HoverBackground
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.75, duration: 0.25 }}
-        style={{ display: "grid", placeItems: "center" }}
-      >
+      <HoverBackground style={{ display: "grid", placeItems: "center" }}>
         {type === "white" ? (
           <img
             src='/twitter_logo.svg'

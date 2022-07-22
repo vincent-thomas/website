@@ -14,7 +14,7 @@ const HomePage: NextPage = () => (
     <Hero />
     <ColorLines />
     <AboutMe />
-    <ColorLines />
+    <ColorLines removeBottom />
     <ProjectsView />
   </>
 );

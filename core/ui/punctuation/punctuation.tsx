@@ -38,7 +38,13 @@ export const Punctuation = ({
         animate={{ opacity: 1 }}
         transition={{ delay: 0.75 }}
       >
-        <img src={"dot.svg"} width='40' height='20' alt='' />
+        <img
+          src={"dot.svg"}
+          width='40'
+          height='20'
+          alt=''
+          className='no-shadow'
+        />
       </motion.div>
       <motion.div
         // initial={{ left: "-2rem" }}

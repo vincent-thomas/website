@@ -25,6 +25,11 @@ import { mount, MountOptions, MountReturn } from "cypress/react";
 // your custom command.
 // Alternatively, can be defined in cypress/support/component.d.ts
 // with a <reference path="./component" /> at the top of your spec.
+
+const registerCypressGrep = require("cypress-grep");
+registerCypressGrep();
+import "@cypress/code-coverage/support";
+
 declare global {
   namespace Cypress {
     interface Chainable {

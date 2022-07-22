@@ -37,17 +37,4 @@ export const Title: FC<
       {children}
     </TitleHelper>
   );
-
-  // return (
-  //   <h2
-  //     className={
-  //       className
-  //         ? `${className} ${S["title"]} ${S[size]} ${S[color]}`
-  //         : `${S["title"]} ${S[size]} ${S[color]}`
-  //     }
-  //     {...props}
-  //   >
-  //     {children}
-  //   </h2>
-  // );
 };

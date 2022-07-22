@@ -1,11 +1,11 @@
-import { Title } from "@core/components";
+import { Button, Title } from "@core/components";
 import Shared from "../../about.module.scss";
 
 import S from "./i-am.module.scss";
 
 export const IAmC = () => {
   return (
-    <div className={Shared["section"]} data-test='about-me-iam'>
+    <div className={S["column"]} data-test='about-me-iam'>
       <Title size='info'>I am...</Title>
       <Title
         size='large'
@@ -31,6 +31,9 @@ export const IAmC = () => {
         </span>{" "}
         15 year old Swedish web-developer who likes to learn new things.
       </Title>
+      <Button type='primary' style={{ marginTop: "0.75rem" }}>
+        Read More
+      </Button>
     </div>
   );
 };

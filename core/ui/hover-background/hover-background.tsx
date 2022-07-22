@@ -1,14 +1,17 @@
-import { motion } from "framer-motion";
-import styled from "styled-components";
+import { FC, HTMLAttributes } from "react";
+interface Props extends HTMLAttributes<HTMLDivElement> {}
 
-export const HoverBackground = styled(motion.div)`
-  background-color: transparent;
-  padding: 0.75rem 0.75rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.2s ease-in-out;
-  &:hover {
-    transition: background-color 0.2s ease-in-out;
-
-    background-color: var(--clr-background-accent);
-  }
-`;
+export const HoverBackground: FC<Props> = ({ style, ...props }) => {
+  return (
+    <div
+      style={{
+        backgroundColor: "transparent",
+        padding: "0.75rem",
+        borderRadius: "0.5rem",
+        transition: "background-color 0.2s ease-in-out",
+        ...style
+      }}
+      {...props}
+    />
+  );
+};
