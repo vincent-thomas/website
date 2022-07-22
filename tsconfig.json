@@ -13,7 +13,6 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["node", "cypress"],
     "baseUrl": ".",
     "paths": {
       "@core/*": ["core/*"],
@@ -21,12 +20,6 @@
     },
     "lib": ["dom", "dom.iterable", "esnext"]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "cypress.d.ts",
-    "next.config.js"
-  ],
-  "exclude": ["node_modules", "**/*.spec.tsx", "cypress", "cypress/e2e"]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
