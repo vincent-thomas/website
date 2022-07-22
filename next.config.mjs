@@ -15,7 +15,10 @@ const config = {
   compress: true,
   poweredByHeader: false,
   optimizeFonts: true,
-
+  swcMinify: true,
+  experimental: {
+    runtime: "edge"
+  },
   images: {
     domains: ["assets.v-thomas.me"]
   },
