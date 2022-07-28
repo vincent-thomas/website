@@ -1,0 +1,16 @@
+@import "styles/_colors.scss";
+
+.text {
+  font-weight: normal;
+  color: $clr-txt;
+  word-wrap: break-word;
+  &-medium {
+    font-size: 1rem;
+  }
+  &-small {
+    font-size: 0.9rem;
+  }
+  &-large {
+    font-size: 1.1rem;
+  }
+}

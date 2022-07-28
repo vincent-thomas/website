@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { AboutMe, ColorLines, ProjectsView, Hero } from "@views/home";
+import { AboutMe, ColorLines, ProjectsView, Hero } from "@domain/home";
 
 const HomePage: NextPage = () => (
   <>

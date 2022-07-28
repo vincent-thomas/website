@@ -38,3 +38,8 @@ yarn-error.log*
 artifacts
 storybook-static
 .vercel
+
+.yarn/*
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
