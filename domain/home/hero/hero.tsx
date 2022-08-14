@@ -1,16 +1,16 @@
-import { MaxWidthLayout } from "@shared/layouts";
-import { Button, Link, Title } from "@shared/components";
-import { Underline } from "@shared/ui";
+import { MaxWidthLayout } from "lib/layouts";
+import { Button, Link, Title } from "lib/components";
+import { Underline } from "lib/ui";
 import { Banner } from "./components/banner";
 import { Image as MyImg } from "./components/image";
 import S from "./hero.module.scss";
-import { InfoTitle } from "@shared/components/info-title/info-title";
+import { InfoTitle } from "lib/components/info-title/info-title";
 
 export const Hero = () => {
   return (
     <>
       <MaxWidthLayout>
-        <div className='flex lg:flex-row flex-col-reverse py-28 gap-space justify-between'>
+        <div className='flex lg:flex-row flex-col-reverse py-28 gap-space justify-between py-12'>
           <div className='my-auto  text-center lg:text-left'>
             <InfoTitle>Hi!</InfoTitle>
             <Title

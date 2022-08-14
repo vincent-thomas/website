@@ -1,6 +1,6 @@
-import { HoverBackground } from "@shared/ui";
+import { HoverBackground } from "lib/ui";
 import { FC } from "react";
-import { Link } from "@shared/components";
+import { Link } from "lib/components";
 
 export const SocialGithubIcon: FC<{ type: "white" | "black" }> = ({ type }) => {
   return (

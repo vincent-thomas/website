@@ -1,4 +1,4 @@
-import { Link } from "@shared/components/link";
+import { Link } from "lib/components/link";
 import { FC, ReactNode } from "react";
 import S from "./banner.module.scss";
 

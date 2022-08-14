@@ -1,5 +1,5 @@
-import { Text, Title } from "@shared/components";
-import { MaxWidthLayout } from "@shared/layouts";
+import { Text, Title } from "lib/components";
+import { MaxWidthLayout } from "lib/layouts";
 import { IAmC } from "./components/i-am/i-am";
 import S from "./about.module.scss";
 
@@ -13,7 +13,7 @@ export const AboutMe = () => {
         style={{ scrollMarginTop: "calc(var(--space) * 1.5)" }}
       >
         <div
-          className={S["container"]}
+          className={`${S["container"]} py-20`}
           id='who-iam'
           style={{
             zIndex: 1
@@ -24,9 +24,7 @@ export const AboutMe = () => {
             text={ */}
           {/* <Link to='#about' type='not-styled'> */}
           {/* <Texting> */}
-          <Title size='large' className='text-center mt-16'>
-            About me
-          </Title>
+
           {/* </Texting> */}
           {/* </Link> */}
           {/* }

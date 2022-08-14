@@ -1,6 +1,6 @@
-import { HoverBackground } from "@shared/ui/hover-background/hover-background";
+import { HoverBackground } from "lib/ui/hover-background/hover-background";
 import { motion } from "framer-motion";
-import { Link } from "@shared/components/link";
+import { Link } from "lib/components/link";
 export const SocialEmailIcon = () => {
   return (
     <motion.div

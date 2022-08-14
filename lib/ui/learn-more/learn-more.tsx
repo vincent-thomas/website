@@ -1,4 +1,4 @@
-import { Button } from "@shared/components";
+import { Button } from "lib/components";
 
 export const LearnMoreButton = ({
   onClick,

@@ -1,20 +1,48 @@
-import { Text, Title } from "@shared/components";
-import { MaxWidthLayout } from "@shared/layouts";
+import { Text, Title } from "lib/components";
+import { MaxWidthLayout } from "lib/layouts";
 import S from "./projects.module.scss";
 
 export const ProjectsView = () => {
   return (
-    <>
-      <div className={S["wrapper"]}>
-        <div className={`${S["row-1"]} ${S["row"]}`}>
-          <div className={`${S["cell-1"]} ${S["cell"]}`}>
+    <MaxWidthLayout>
+      <div className='grid gap-4 grid-cols-[1fr,1fr]'>
+        <div className='grid grid-rows-[auto,1fr,auto]'>
+          <div style={{ maxWidth: "30ch" }}>
+            <Title size='large' className='pt-16'>
+              Projects
+            </Title>
+            <Text>
+              Here are my projects i’ve been working on lately. Hope you like
+              them!
+            </Text>
+          </div>
+          <Title size='large' className='pt-16'>
+            Projects
+          </Title>
+        </div>
+        <div>
+          {" "}
+          <Title size='large' className='pt-16'>
+            Placeholder
+          </Title>{" "}
+          <Title size='large' className='pt-16'>
+            PlaceHolder
+          </Title>{" "}
+          <Title size='large' className='pt-16'>
+            placeholder
+          </Title>
+        </div>
+      </div>
+      {/* <div className='grid'>
+        <div className=''>
+          <div className=''>
             <Title size='large'>Projects</Title>
             <Text restrictWidth>
               Here are my projects i’ve been working on lately. Hope you like
               them!
             </Text>
           </div>
-          <div className={`${S["cell-2"]} ${S["cell"]}`}>
+          <div className=''>
             <h1
               style={{
                 fontSize: "3rem",
@@ -28,10 +56,10 @@ export const ProjectsView = () => {
             </Text>
           </div>
         </div>
-        <div className={`${S["row-2"]} ${S["row"]}`}>
-          <div className={`${S["cell-1"]} ${S["cell"]}`}>
+        <div className=''>
+          <div className=''>
             <h1
-              className={S["pureforms-title"]}
+              className=''
               style={{
                 fontSize: "3rem",
                 fontWeight: 300
@@ -40,7 +68,7 @@ export const ProjectsView = () => {
               PureForms
             </h1>
           </div>
-          <div className={`${S["cell-2"]} ${S["cell"]}`}>
+          <div className=''>
             <h1
               style={{
                 fontSize: "3rem",
@@ -55,8 +83,8 @@ export const ProjectsView = () => {
           </div>
         </div>
       </div>
-      <div className={`${S["row-3"]} ${S["row"]}`}>
-        <div className={`${S["cell-1"]} ${S["cell"]}`}>
+      <div className=''>
+        <div className=''>
           <h1
             style={{
               fontSize: "3rem",
@@ -70,17 +98,17 @@ export const ProjectsView = () => {
             dashboards.
           </Text>
         </div>
-        <div className={`${S["cell-2"]} ${S["cell"]}`}>
+        <div className=''>
           <Title style={{ fontWeight: 400, marginBlock: "auto" }}>
             Do you have a fun project in mind and want to colaborate? Chat with
             me <a href='mailto:vincent.nathan.thomas@gmail.com'>here</a>.
           </Title>
         </div>
-      </div>
-      <MaxWidthLayout>
+      </div> */}
+      {/* <MaxWidthLayout>
         <Title color='dark'>Coming more soon...</Title>
-      </MaxWidthLayout>
-    </>
+      </MaxWidthLayout> */}
+    </MaxWidthLayout>
   );
 };
 // </MaxWidthLayout>

@@ -1,4 +1,4 @@
-import { Button, Title } from "@shared/components";
+import { Button, Title } from "lib/components";
 import Shared from "../../about.module.scss";
 
 import S from "./i-am.module.scss";

@@ -1,9 +1,9 @@
-import { defineConfig } from 'windicss/helpers'
+import { defineConfig } from "windicss/helpers";
 
 export default defineConfig({
   extract: {
-    include: ['**/*.tsx'],
-    exclude: ["node_modules", ".next"]
+    include: ["**/*.tsx"]
+    // exclude: ["node_modules", ".next"]
   },
   theme: {
     extend: {
@@ -18,8 +18,8 @@ export default defineConfig({
         space: "4rem"
       },
       corePlugins: {
-        preflight: false
+        preflight: true
       }
     }
   }
-})
+});

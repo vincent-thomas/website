@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Title } from "@shared/components";
+import { Title } from "lib/components";
 import { ReactNode } from "react";
 
 export const Punctuation = ({

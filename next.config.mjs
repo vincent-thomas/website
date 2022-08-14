@@ -19,7 +19,6 @@ const config = {
   },
   trailingSlash: false,
   productionBrowserSourceMaps: true,
-  basePath: "",
-  useFileSystemPublicRoutes: true
+  basePath: ""
 };
 export default config;

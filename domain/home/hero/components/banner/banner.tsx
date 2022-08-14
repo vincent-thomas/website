@@ -1,10 +1,6 @@
-import { Link } from "@shared/components";
-import {
-  SocialGithubIcon,
-  SocialTwitterIcon,
-  HoverBackground
-} from "@shared/ui";
-import { SHORTS } from "@shared/utils";
+import { Link } from "lib/components";
+import { SocialGithubIcon, SocialTwitterIcon, HoverBackground } from "lib/ui";
+import { SHORTS } from "lib/utils";
 import S from "./banner.module.scss";
 
 export const Banner = () => {
