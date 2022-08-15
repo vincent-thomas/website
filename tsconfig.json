@@ -15,8 +15,8 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@core/*": ["core/*"],
-      "@views/*": ["views/*"]
+      "@lib/*": ["lib/*"],
+      "@domain/*": ["domain/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"]
   },
