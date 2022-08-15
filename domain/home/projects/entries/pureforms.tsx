@@ -1,4 +1,4 @@
-import { Text, Title } from "@lib/components";
+import { Button, Link, Text, Title } from "@lib/components";
 
 export const ProjectPureForms = () => {
   return (
@@ -9,7 +9,28 @@ export const ProjectPureForms = () => {
         </Title>
         <img src='https://pureforms.net/favicon.png' alt='' width='50' />
       </div>
-      <Text color='light'>PureForms is a alternative to TypeForms</Text>
+      <Text color='light'>
+        PureForms is a alternative to TypeForms. It is more focused on
+        developers providing sdks and api&apos;s for public use.
+      </Text>
+      <div className='ml-auto mt-auto  flex gap-4'>
+        <Link type='not-styled' to='https://pureforms.net' external>
+          <Button
+            type='secondary'
+            className=' text-gray-100 !outline-gray-100 !p-4'
+          >
+            Visit
+          </Button>
+        </Link>
+        <Link type='not-styled' to='https://docs.pureforms.net'>
+          <Button
+            type='secondary'
+            className=' text-gray-100 !outline-gray-100 !p-4'
+          >
+            Docs
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 };

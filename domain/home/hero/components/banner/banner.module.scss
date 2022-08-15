@@ -7,9 +7,8 @@
   border-block: 1px solid $clr-txt;
 
   .container {
-    max-width: $max-width;
     margin: 0 auto;
-    padding-inline: var(--sc-space);
+    @apply py-[1.5rem] max-w-max-w;
     padding-block: calc(var(--sc-space) / 3);
 
     display: flex;

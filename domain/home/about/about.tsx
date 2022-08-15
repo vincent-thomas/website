@@ -6,12 +6,7 @@ import S from "./about.module.scss";
 export const AboutMe = () => {
   return (
     <MaxWidthLayout>
-      <div
-        className={S["wrapper"]}
-        data-test='about-me-wrapper'
-        id='about'
-        style={{ scrollMarginTop: "calc(var(--space) * 1.5)" }}
-      >
+      <div className={S["wrapper"]} data-test='about-me-wrapper' id='about'>
         <div
           className={`${S["container"]} py-20`}
           id='who-iam'

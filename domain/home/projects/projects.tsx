@@ -17,26 +17,23 @@ export const ProjectsView = () => {
             <div>
               <Title size='medium'>Projects</Title>
               <Text className='max-w-[20ch]'>
-                Here are my projects i’ve been working on lately. Hope you like
-                them!
+                Here are choosen projects i’ve been working on lately. Hope you
+                like them!
               </Text>
             </div>
-            <Link to='/testing' type='not-styled'>
+            <Link to='/projects' type='not-styled'>
               See all Projects
             </Link>
           </div>
         </MaxWidthLayout>
       </div>
       <MaxWidthLayout>
-        <div
-          className='inline-grid md:grid-cols-[1fr,1fr] gap-space my-space w-full'
-          style={{ height: "auto" }}
-        >
-          <div className='gap-space grid md:grid-rows-[1fr,40%] md:h-[30rem] relative md:left-0 md:w-[90%]'>
+        <div className='grid md:grid-cols-[1fr,1fr] gap-space my-space max-w-[1000px] mx-auto'>
+          <div className='gap-space grid md:grid-rows-[1fr,40%] md:h-[35rem] relative md:left-0 md:w-[90%]'>
             <ProjectPureForms />
             <ProjectShorter />
           </div>
-          <div className='gap-space grid md:grid-rows-[1fr,55%] md:h-[30rem]'>
+          <div className='gap-space grid md:grid-rows-[1fr,55%] md:h-[35rem]'>
             <IsTheWebUpProject />
             <GatekeeperProject />
           </div>

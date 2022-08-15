@@ -10,7 +10,7 @@ export const Hero = () => {
   return (
     <>
       <MaxWidthLayout>
-        <div className='flex lg:flex-row flex-col-reverse gap-10 items-center lg:justify-between py-12'>
+        <div className='flex lg:flex-row flex-col-reverse gap-10 items-center lg:justify-between py-20'>
           <div className='text-center lg:text-left'>
             <InfoTitle>Hi!</InfoTitle>
             <Title
