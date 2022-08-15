@@ -2,7 +2,7 @@
 @import "styles/_colors";
 
 .color-dark {
-  color: $clr-txt-dark;
+  @apply text-light-text;
 }
 .color-light {
   color: $clr-txt;
@@ -17,4 +17,11 @@
 .title[data-size="large"] {
   position: relative;
   font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.title[data-size="medium"] {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 400;
 }

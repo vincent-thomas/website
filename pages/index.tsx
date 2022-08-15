@@ -12,9 +12,7 @@ const HomePage: NextPage = () => (
       />
     </Head>
     <Hero />
-    {/* <ColorLines /> */}
     <AboutMe />
-    <ColorLines />
     <ProjectsView />
   </>
 );

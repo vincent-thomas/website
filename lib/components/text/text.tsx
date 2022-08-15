@@ -3,11 +3,14 @@ export const Text: FC<
   {
     children: ReactNode;
     restrictWidth?: boolean;
+    color?: "dark" | "light";
   } & DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>
-> = ({ children, restrictWidth, className, ...props }) => (
+> = ({ children, restrictWidth, className, color = "dark", ...props }) => (
   <span
-    className={`${className} font-normal font-4`}
-    style={restrictWidth ? { maxWidth: "50ch" } : {}}
+    className={`${className ? `${className} ` : ""}font-normal font-bold ${
+      color === "dark" ? "text-text" : "text-light-text"
+    }`}
+    style={restrictWidth ? { maxWidth: "30ch" } : {}}
     {...props}
   >
     {children}

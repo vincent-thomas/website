@@ -7,15 +7,21 @@ export default defineConfig({
   },
   theme: {
     extend: {
+      colors: {
+        accent: "hsla(213, 100%, 83%, 0.68)",
+        text: "#474747",
+        black: "#000"
+      },
       textColor: {
-        info: "#ababab"
+        info: "#ababab",
+        "light-text": "#FFF"
       },
       maxWidth: {
         "title-width": "21ch",
         "max-w": "1200px"
       },
       spacing: {
-        space: "4rem"
+        space: "2rem"
       },
       corePlugins: {
         preflight: true

@@ -1,114 +1,48 @@
-import { Text, Title } from "lib/components";
+import { Link, Text, Title } from "lib/components";
 import { MaxWidthLayout } from "lib/layouts";
-import S from "./projects.module.scss";
+import { GatekeeperProject } from "./entries/gatekeeper";
+import { IsTheWebUpProject } from "./entries/isthewebup";
+import { ProjectPureForms } from "./entries/pureforms";
+import { ProjectShorter } from "./entries/shorter";
 
 export const ProjectsView = () => {
   return (
-    <MaxWidthLayout>
-      <div className='grid gap-4 grid-cols-[1fr,1fr]'>
-        <div className='grid grid-rows-[auto,1fr,auto]'>
-          <div style={{ maxWidth: "30ch" }}>
-            <Title size='large' className='pt-16'>
-              Projects
-            </Title>
-            <Text>
-              Here are my projects i’ve been working on lately. Hope you like
-              them!
-            </Text>
+    <>
+      <div
+        className={`h-[140px] bg-accent outline outline-y-2 outline-text`}
+      ></div>
+      <div className='border-y-2 border-text py-8 flex flex-col'>
+        <MaxWidthLayout>
+          <div className='flex justify-between items-center'>
+            <div>
+              <Title size='medium'>Projects</Title>
+              <Text className='max-w-[20ch]'>
+                Here are my projects i’ve been working on lately. Hope you like
+                them!
+              </Text>
+            </div>
+            <Link to='/testing' type='not-styled'>
+              See all Projects
+            </Link>
           </div>
-          <Title size='large' className='pt-16'>
-            Projects
-          </Title>
-        </div>
-        <div>
-          {" "}
-          <Title size='large' className='pt-16'>
-            Placeholder
-          </Title>{" "}
-          <Title size='large' className='pt-16'>
-            PlaceHolder
-          </Title>{" "}
-          <Title size='large' className='pt-16'>
-            placeholder
-          </Title>
-        </div>
+        </MaxWidthLayout>
       </div>
-      {/* <div className='grid'>
-        <div className=''>
-          <div className=''>
-            <Title size='large'>Projects</Title>
-            <Text restrictWidth>
-              Here are my projects i’ve been working on lately. Hope you like
-              them!
-            </Text>
+      <MaxWidthLayout>
+        <div
+          className='inline-grid md:grid-cols-[1fr,1fr] gap-space my-space w-full'
+          style={{ height: "auto" }}
+        >
+          <div className='gap-space grid md:grid-rows-[1fr,40%] md:h-[30rem] relative md:left-0 md:w-[90%]'>
+            <ProjectPureForms />
+            <ProjectShorter />
           </div>
-          <div className=''>
-            <h1
-              style={{
-                fontSize: "3rem",
-                fontWeight: 300
-              }}
-            >
-              IsTheWebUp?
-            </h1>
-            <Text style={{ color: "black" }}>
-              A website to check if a specific website is up and functioning...
-            </Text>
+          <div className='gap-space grid md:grid-rows-[1fr,55%] md:h-[30rem]'>
+            <IsTheWebUpProject />
+            <GatekeeperProject />
           </div>
         </div>
-        <div className=''>
-          <div className=''>
-            <h1
-              className=''
-              style={{
-                fontSize: "3rem",
-                fontWeight: 300
-              }}
-            >
-              PureForms
-            </h1>
-          </div>
-          <div className=''>
-            <h1
-              style={{
-                fontSize: "3rem",
-                fontWeight: 300
-              }}
-            >
-              Shorter
-            </h1>
-            <Text style={{ color: "black" }}>
-              A link shortener built with remix and redis
-            </Text>
-          </div>
-        </div>
-      </div>
-      <div className=''>
-        <div className=''>
-          <h1
-            style={{
-              fontSize: "3rem",
-              fontWeight: 300
-            }}
-          >
-            Gatekeeper
-          </h1>
-          <Text style={{ color: "black" }}>
-            A advanced Discord bot for authentication and user management with
-            dashboards.
-          </Text>
-        </div>
-        <div className=''>
-          <Title style={{ fontWeight: 400, marginBlock: "auto" }}>
-            Do you have a fun project in mind and want to colaborate? Chat with
-            me <a href='mailto:vincent.nathan.thomas@gmail.com'>here</a>.
-          </Title>
-        </div>
-      </div> */}
-      {/* <MaxWidthLayout>
-        <Title color='dark'>Coming more soon...</Title>
-      </MaxWidthLayout> */}
-    </MaxWidthLayout>
+      </MaxWidthLayout>
+    </>
   );
 };
 // </MaxWidthLayout>
