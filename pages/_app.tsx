@@ -4,6 +4,7 @@ import { Banner } from "lib/ui";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { Footer } from "shared/footer/footer";
 
 function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -21,6 +22,7 @@ function App({ Component, pageProps }: AppProps) {
         up for the waitlist today!
       </Banner>
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }

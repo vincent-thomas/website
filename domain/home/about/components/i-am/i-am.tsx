@@ -1,16 +1,18 @@
+import { useLang } from "@langs";
 import { Button, Title } from "lib/components";
 import Shared from "../../about.module.scss";
 
 import S from "./i-am.module.scss";
 
 export const IAmC = () => {
+  const [langs] = useLang();
   return (
     <div className='flex flex-col items-start' data-test='about-me-iam'>
-      <Title size='info'>I am...</Title>
+      <Title size='info'>{langs.iAm}...</Title>
       <Title size='large' className={`${Shared["max-title-size"]}`}>
-        A{" "}
+        {langs.one}{" "}
         <span className='relative'>
-          15 year old
+          {langs.yearOld}
           <img
             src='/text-underline.svg'
             className={`rotate-[1.2deg] no-shadow absolute`}
@@ -24,7 +26,7 @@ export const IAmC = () => {
             alt=''
           />
         </span>{" "}
-        Swedish web-developer who likes to learn new things.
+        Swedish guy
         {/* <div style={{ position: "relative" }}>
           
         </div> */}

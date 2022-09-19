@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@lib/*": ["lib/*"],
-      "@domain/*": ["domain/*"]
+      "@domain/*": ["domain/*"],
+      "@langs": ["lang/mngr.ts"]
     },
     "lib": ["dom", "dom.iterable", "esnext"]
   },

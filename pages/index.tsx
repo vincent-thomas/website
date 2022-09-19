@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { AboutMe, ColorLines, ProjectsView, Hero } from "@domain/home";
+import { AboutMe, ProjectsView, Hero } from "@domain/home";
+import { Navbar } from "@domain/home/hero/components/navbar";
 
 const HomePage: NextPage = () => (
   <>
@@ -11,9 +12,12 @@ const HomePage: NextPage = () => (
         content="Hi! I'm Vincent Thomas, a 15 year old software developer who likes coding. This is my page. Pay a visit?"
       />
     </Head>
+    <Navbar></Navbar>
     <Hero />
     <AboutMe />
-    <ProjectsView />
+    <div
+      className={`h-[140px] bg-accent outline outline-y-2 outline-text`}
+    ></div>
   </>
 );
 

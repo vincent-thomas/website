@@ -5,21 +5,23 @@ import { Banner } from "./components/banner";
 import { Image as MyImg } from "./components/image";
 import S from "./hero.module.scss";
 import { InfoTitle } from "lib/components/info-title/info-title";
+import { useLang } from "@langs";
 
 export const Hero = () => {
+  const [langs] = useLang();
   return (
     <>
       <MaxWidthLayout>
         <div className='flex lg:flex-row flex-col-reverse gap-10 items-center lg:justify-between py-20'>
           <div className='text-center lg:text-left'>
-            <InfoTitle>Hi!</InfoTitle>
+            <InfoTitle>{langs.greeting}!</InfoTitle>
             <Title
               size='large'
               data-test='hero-title'
               className='max-w-title-width'
             >
-              I&rsquo;m <Underline>Vincent Thomas</Underline> , You found me. I
-              turn food and hard work into websites.
+              {langs.iAm} <Underline>Vincent Thomas</Underline>
+              och {langs.heroTitleInfo}
             </Title>
             <div className='flex gap-4 mt-4 justify-center lg:justify-start'>
               <Link
@@ -27,12 +29,12 @@ export const Hero = () => {
                 to='mailto:vincent.nathan.thomas@gmail.com'
               >
                 <Button data-test='button-contact' type='primary'>
-                  Contact Me
+                  {langs.contactMe}
                 </Button>
               </Link>
               <Link type='not-styled' to='#about'>
                 <Button data-test='button-about' type='secondary'>
-                  About Me
+                  {langs.aboutMe}
                 </Button>
               </Link>
             </div>

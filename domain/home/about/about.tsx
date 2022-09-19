@@ -2,6 +2,7 @@ import { Text, Title } from "lib/components";
 import { MaxWidthLayout } from "lib/layouts";
 import { IAmC } from "./components/i-am/i-am";
 import S from "./about.module.scss";
+import { useLang } from "@langs";
 
 export const AboutMe = () => {
   return (
